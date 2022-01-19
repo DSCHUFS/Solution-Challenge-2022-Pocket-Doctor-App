@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Color -->
+    <color name="primary_first_blue">#00467F</color>
+    <color name="primary_second_blue">#40749F</color>
+    <color name="secondary_first_blue">#80A3BF</color>
+    <color name="secondary_second_blue">#E7EDF2</color>
+    <color name="accent_red">#FF5722</color>
+
+    <!-- Text Color -->
+    <color name="primary_text_black">#1F1F1F</color>
+    <color name="text_body_dark_gray">#707070</color>
+    <color name="hint_gray">#9A9A9A</color>
+    <color name="light_gray">#D4D4D4</color>
+    <color name="background_white">#FFFFFF</color>
+</resources>
