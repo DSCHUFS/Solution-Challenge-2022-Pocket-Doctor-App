@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/background_layout_card_round_light_blue.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/background_layout_card_round_lightblue.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/background_layout_round_gray.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/background_search_filter_round_white.xml" value="0.176" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_authenticate_selected_round_blue.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_authenticate_unselected_round_gray.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_login_round_lightblue.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_primary_round_blue.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_secondary_round.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_secondary_round_lightblue.xml" value="0.536" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/checkbox_selected_round_blue.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/checkbox_unselected_round_lightblue.xml" value="0.264" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_anxiety_64.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_home_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_mypage_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_search_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/tab_layout_round_gray.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/tab_layout_unselected_round_light_gray.xml" value="0.21296296296296297" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_hospital_detail.xml" value="0.24537037037037038" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_main.xml" value="0.1259259259259259" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_reservation.xml" value="0.24537037037037038" />
