@@ -18,9 +18,27 @@
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_anxiety_64.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_home_24.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_mypage_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_reports_24.xml" value="0.1648148148148148" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_search_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_selector_24.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/selector_bottom_navigation_color.xml" value="0.42407407407407405" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/tab_layout_round_gray.xml" value="0.21296296296296297" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/tab_layout_unselected_round_light_gray.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_hospital_detail.xml" value="0.2" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_reservation.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_treatment_list.xml" value="0.264" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_my_page.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_on_boarding.xml" value="0.33125" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_on_boarding_first.xml" value="0.33605072463768115" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_on_boarding_fourth.xml" value="0.33605072463768115" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_on_boarding_second.xml" value="0.33605072463768115" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_on_boarding_third.xml" value="0.33605072463768115" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_reports.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/item_home_counseling_types.xml" value="0.1" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/item_hospital_detail.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.4" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_hospital_detail.xml" value="0.24537037037037038" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_main.xml" value="0.1259259259259259" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_reservation.xml" value="0.24537037037037038" />
@@ -36,5 +54,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.176" />
+      </ProjectState>
+    </option>
   </component>
 </project>

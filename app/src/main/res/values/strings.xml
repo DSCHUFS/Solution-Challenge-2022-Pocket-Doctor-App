@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">PocketDoctor</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Main Activity -->
+    <string name="bottom_navigation_home">Home</string>
+    <string name="bottom_navigation_reports">Reports</string>
+    <string name="bottom_navigation_my_page">My Page</string>
+
+    <!-- Home Fragment -->
+    <string name="home_fragment_title">Medical Counseling Type</string>
+    <string name="home_fragment_melancholia">Melancholia</string>
+    <string name="home_fragment_panic">Panic Disorder</string>
+    <string name="home_fragment_insomnia">Insomnia</string>
+    <string name="home_fragment_ocd">OCD</string>
+    <string name="home_fragment_dementia">Dementia</string>
+    <string name="home_fragment_eating">Eating Disorder</string>
+    <string name="home_fragment_anxiety">Anxiety</string>
+    <string name="home_fragment_etc">Etc</string>
+    <string name="treatment_list_title">Pocket Doctor Treatment Rooms</string>
+    <string name="hospital_detail_information">Information</string>
+    <string name="hospital_detail_counseling_time">Counseling Time</string>
+    <string name="hospital_detail_location">Location</string>
+    <string name="hospital_detail_request_button">Request Consultation</string>
+    <string name="reservation_title">Consultation Application</string>
+    <string name="reservation_date_time">Choose date and time</string>
 </resources>
