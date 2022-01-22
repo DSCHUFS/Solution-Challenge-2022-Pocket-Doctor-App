@@ -8,7 +8,7 @@
     <color name="accent_red">#FF5722</color>
 
     <!-- Text Color -->
-    <color name="primary_text_black">#1F1F1F</color>
+    <color name="primary_text_black">#000000</color>
     <color name="text_body_dark_gray">#707070</color>
     <color name="hint_gray">#9A9A9A</color>
     <color name="light_gray">#D4D4D4</color>
