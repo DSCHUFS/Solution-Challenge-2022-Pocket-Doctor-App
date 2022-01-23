@@ -23,4 +23,6 @@
     <string name="hospital_detail_request_button">Request Consultation</string>
     <string name="reservation_title">Consultation Application</string>
     <string name="reservation_date_time">Choose date and time</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_medical_reports">My Medical Reports</string>
 </resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- A CardView that contains a TextView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginBottom="20dp"
+        android:outlineAmbientShadowColor="#000000"
+        card_view:cardCornerRadius="10dp">
+
+        <TextView
+            android:id="@+id/id_reports_doctor"
+            style="@style/BaseSubtitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:text="이재성 의사" />
+
+        <TextView
+            android:id="@+id/id_reports_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="50dp"
+            android:text="2022.01.10 (월) 17:38"
+            android:textColor="@color/text_body_dark_gray" />
+
+        <TextView
+            android:id="@+id/id_reports_symptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="100dp"
+            android:text="다 때려 부수고 싶어요"
+            android:textColor="@color/primary_text_black"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/id_reports_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:text=" 더푸른 의원"
+            android:textColor="@color/text_body_dark_gray" />
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
