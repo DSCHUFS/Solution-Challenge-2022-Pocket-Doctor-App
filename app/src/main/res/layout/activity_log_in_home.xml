@@ -6,4 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.LogInHomeActivity">
 
+    <ImageView
+        android:id="@+id/login_home_logo_imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="96dp"
+        android:src="@drawable/ic_logo_300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_home_moveToLogin_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_login_round_lightblue"
+        android:drawableStart="@drawable/ic_logo_48"
+        android:paddingStart="18dp"
+        android:text="@string/login_home_move_to_login"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_second_blue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_home_logo_imageView"
+        tools:ignore="RtlSymmetry" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

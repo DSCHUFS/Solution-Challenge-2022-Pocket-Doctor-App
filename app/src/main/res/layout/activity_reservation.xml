@@ -18,52 +18,52 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/BaseSubtitleTextView"
         android:id="@+id/reservation_date_time_title_textView"
+        style="@style/BaseSubtitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/reservation_date_time"
-        app:layout_constraintTop_toBottomOf="@id/reservation_title_textView"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:text="@string/reservation_date_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservation_title_textView" />
 
     <ImageView
         android:id="@+id/reservation_date_time_selector_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:src="@drawable/ic_selector_24"
         app:layout_constraintBottom_toBottomOf="@+id/reservation_date_time_title_textView"
         app:layout_constraintStart_toEndOf="@+id/reservation_date_time_title_textView"
-        app:layout_constraintTop_toTopOf="@+id/reservation_date_time_title_textView"
-        android:layout_marginStart="24dp"/>
+        app:layout_constraintTop_toTopOf="@+id/reservation_date_time_title_textView" />
 
     <TextView
-        style="@style/BaseSubtitleTextView"
         android:id="@+id/reservation_problem_title_textView"
+        style="@style/BaseSubtitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tell me what is your problem"
-        app:layout_constraintTop_toBottomOf="@id/reservation_date_time_title_textView"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="32dp"
+        android:text="Tell me what is your problem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservation_date_time_title_textView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/reservation_problem_title_textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="24dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservation_problem_title_textView">
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Problem"
+            android:hint="Your Problem" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
