@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.FragmentReportsBinding
@@ -24,6 +25,13 @@ class ReportsFragment : Fragment() {
         val view = binding.root
         return view
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val reports = loadReportData()
+        val reportRecyclerAdapter = ReportRecyclerAdapter(reports)
+        binding.ReportRecyclerview.adapter = reportRecyclerAdapter
+        binding.ReportRecyclerview.layoutManager = LinearLayoutManager(this.activity)
+    }
     private fun loadReportData() : MutableList<Reports> {
         val reportList = mutableListOf<Reports>()
         for(i in 1..10){
@@ -36,9 +44,6 @@ class ReportsFragment : Fragment() {
         }
         return reportList
     }
-    val reports = loadReportData()
-    val reportRecyclerAdapter = com.hot.pocketdoctor.ui.ReportRecyclerAdapter(reports)
-
 }
 class ReportRecyclerAdapter(val reportData: MutableList<Reports>) : RecyclerView.Adapter<ReportRecyclerAdapter.Holder>() {
 
@@ -53,6 +58,16 @@ class ReportRecyclerAdapter(val reportData: MutableList<Reports>) : RecyclerView
     override fun getItemCount() = reportData.size
 
     class Holder(val binding: ItemReportsRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                with(binding){
+                    val reportDoctor = idReportsDoctor.text
+                    val reportDate = idReportsDate.text
+                    val reportSymptom = idReportsSymptom.text
+                    val reportHospital = idReportsHospital.text
+                }
+            }
+        }
         fun setReport(report: Reports){
             with(binding){
                 idReportsDoctor.text = report.doctor

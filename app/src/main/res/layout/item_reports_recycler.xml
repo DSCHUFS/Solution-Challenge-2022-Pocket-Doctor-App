@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <!-- A CardView that contains a TextView -->
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_layout_round_gray"
+        android:clickable="true"
         android:outlineAmbientShadowColor="#000000"
-        card_view:cardCornerRadius="10dp">
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="3dp"
+        card_view:cardUseCompatPadding="true">
 
         <TextView
             android:id="@+id/id_reports_doctor"
@@ -29,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="50dp"
+            android:clickable="false"
             android:text="2022.01.10 (월) 17:38"
             android:textColor="@color/text_body_dark_gray" />
 
