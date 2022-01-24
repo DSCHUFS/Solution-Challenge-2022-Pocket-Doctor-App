@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PocketDoctor</string>
-
-    <!-- Main Activity -->
+    <string name="hello_blank_fragment">Fragment</string>
+    <!-- Main -->
     <string name="bottom_navigation_home">Home</string>
     <string name="bottom_navigation_reports">Reports</string>
     <string name="bottom_navigation_my_page">My Page</string>
@@ -16,11 +16,46 @@
     <string name="home_fragment_eating">Eating Disorder</string>
     <string name="home_fragment_anxiety">Anxiety</string>
     <string name="home_fragment_etc">Etc</string>
+
+    <!-- Treatment List -->
     <string name="treatment_list_title">Pocket Doctor Treatment Rooms</string>
+
+    <!-- Hospital Detail -->
     <string name="hospital_detail_information">Information</string>
     <string name="hospital_detail_counseling_time">Counseling Time</string>
     <string name="hospital_detail_location">Location</string>
     <string name="hospital_detail_request_button">Request Consultation</string>
+
+    <!-- Reservation -->
     <string name="reservation_title">Consultation Application</string>
     <string name="reservation_date_time">Choose date and time</string>
+
+    <!-- Login Home -->
+    <string name="login_home_move_to_login">Continue with Pocket Doctor</string>
+
+    <!-- Login -->
+    <string name="login_title">Log In</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_find_account">Find Account</string>
+    <string name="login_find_password">Find Password</string>
+    <string name="login_login_button">Log In</string>
+    <string name="login_register_button">Register</string>
+
+    <!-- Register -->
+    <string name="signup_title">Register</string>
+    <string name="signup_name_hint">Name</string>
+    <string name="signup_email_hint">Email</string>
+    <string name="signup_password_hint">Password</string>
+    <string name="signup_cpw_hint">Password Again</string>
+    <string name="signup_phone_hint">Phone Number</string>
+    <string name="signup_next">Next</string>
+
+    <!-- Phone Authentication -->
+    <string name="phone_auth_title">We need your verification</string>
+    <string name="phone_auth_subtitle">We sent you a code to verify\nyour phone number</string>
+    <string name="phone_auth_not_receive">I didn\'t receive a code</string>
+    <string name="phone_auth_resend">Resend</string>
+    <string name="phone_auth_create_account">Create Account</string>
+
 </resources>

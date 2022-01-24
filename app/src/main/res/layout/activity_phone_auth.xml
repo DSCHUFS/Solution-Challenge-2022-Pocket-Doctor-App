@@ -6,4 +6,114 @@
     android:layout_height="match_parent"
     tools:context=".ui.signup.PhoneAuthActivity">
 
+    <TextView
+        android:id="@+id/phone_auth_title_textView"
+        style="@style/BaseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/phone_auth_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/phone_auth_subtitle_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/phone_auth_subtitle"
+        android:textColor="@color/text_body_dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_title_textView" />
+
+    <LinearLayout
+        android:id="@+id/phone_auth_code_container_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_subtitle_textView">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_auth_code1_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:maxLength="2"
+            android:maxLines="1"
+            android:textAlignment="center" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_auth_code2_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:imeOptions="actionDone" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_auth_code3_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phone_auth_code4_editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/phone_auth_not_receive_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/phone_auth_not_receive"
+        android:textColor="@color/hint_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/phone_auth_code_container_layout"
+        app:layout_constraintStart_toStartOf="@+id/phone_auth_code_container_layout"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_code_container_layout" />
+
+    <TextView
+        android:id="@+id/phone_auth_resend_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/phone_auth_resend"
+        android:textColor="@color/primary_first_blue"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/phone_auth_not_receive_textView"
+        app:layout_constraintStart_toStartOf="@id/phone_auth_not_receive_textView"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_not_receive_textView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/phone_auth_register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_primary_round_blue"
+        android:text="@string/phone_auth_create_account"
+        android:textAllCaps="false"
+        android:textColor="@color/background_white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_auth_resend_textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
