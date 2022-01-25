@@ -31,4 +31,10 @@
     <string name="reservation_date_time">Choose date and time</string>
     <string name="reports_fragment_title">My Medical Reports</string>
 
+    <!-- Search -->
+    <string name="search_hint">Search Hospital or Dr\'s Name</string>
+    <string name="search_latest_history">Latest History</string>
+    <string name="search_delete_all">Delete All</string>
+    <string name="search_result">Search Result</string>
+
 </resources>
