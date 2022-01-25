@@ -29,5 +29,6 @@
     <!-- Reservation -->
     <string name="reservation_title">Consultation Application</string>
     <string name="reservation_date_time">Choose date and time</string>
+    <string name="reports_fragment_title">My Medical Reports</string>
 
 </resources>
