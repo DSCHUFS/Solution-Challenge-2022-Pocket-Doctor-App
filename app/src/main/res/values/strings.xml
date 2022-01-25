@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PocketDoctor</string>
-
-    <!-- Main Activity -->
+    <string name="hello_blank_fragment">Fragment</string>
+    <!-- Main -->
     <string name="bottom_navigation_home">Home</string>
     <string name="bottom_navigation_reports">Reports</string>
     <string name="bottom_navigation_my_page">My Page</string>
@@ -16,13 +16,18 @@
     <string name="home_fragment_eating">Eating Disorder</string>
     <string name="home_fragment_anxiety">Anxiety</string>
     <string name="home_fragment_etc">Etc</string>
+
+    <!-- Treatment List -->
     <string name="treatment_list_title">Pocket Doctor Treatment Rooms</string>
+
+    <!-- Hospital Detail -->
     <string name="hospital_detail_information">Information</string>
     <string name="hospital_detail_counseling_time">Counseling Time</string>
     <string name="hospital_detail_location">Location</string>
     <string name="hospital_detail_request_button">Request Consultation</string>
+
+    <!-- Reservation -->
     <string name="reservation_title">Consultation Application</string>
     <string name="reservation_date_time">Choose date and time</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="my_medical_reports">My Medical Reports</string>
+
 </resources>
