@@ -5,56 +5,76 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.hot.pocketdoctor.R
+import com.hot.pocketdoctor.databinding.FragmentReportsBinding
+import com.hot.pocketdoctor.databinding.ItemReportsRecyclerBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReportsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ReportsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding : FragmentReportsBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reports, container, false)
+        _binding = FragmentReportsBinding.inflate(inflater,container,false)
+        val view = binding.root
+        return view
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val reports = loadReportData()
+        val reportRecyclerAdapter = ReportRecyclerAdapter(reports)
+        binding.ReportRecyclerview.adapter = reportRecyclerAdapter
+        binding.ReportRecyclerview.layoutManager = LinearLayoutManager(this.activity)
+    }
+    private fun loadReportData() : MutableList<Reports> {
+        val reportList = mutableListOf<Reports>()
+        for(i in 1..10){
+            val doctor = "이재성 의사"
+            val reportTime = "2022.01.10 (월) 17:38"
+            val symptom = "다 때려 부수고 싶어요"
+            val hospital = "더푸른 의원"
+            val report = Reports(doctor, reportTime, symptom, hospital)
+            reportList.add(report)
+        }
+        return reportList
+    }
+}
+class ReportRecyclerAdapter(val reportData: MutableList<Reports>) : RecyclerView.Adapter<ReportRecyclerAdapter.Holder>() {
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReportsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReportsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int ): ReportRecyclerAdapter.Holder {
+        val binding = ItemReportsRecyclerBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        return Holder(binding)
+    }
+    override fun onBindViewHolder(holder: ReportRecyclerAdapter.Holder, position: Int) {
+        val report = reportData.get(position)
+        holder.setReport(report)
+    }
+    override fun getItemCount() = reportData.size
+
+    class Holder(val binding: ItemReportsRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                with(binding){
+                    val reportDoctor = idReportsDoctor.text
+                    val reportDate = idReportsDate.text
+                    val reportSymptom = idReportsSymptom.text
+                    val reportHospital = idReportsHospital.text
                 }
             }
+        }
+        fun setReport(report: Reports){
+            with(binding){
+                idReportsDoctor.text = report.doctor
+                idReportsDate.text = report.reportTime
+                idReportsSymptom.text = report.symptom
+                idReportsHospital.text = report.hospital
+            }
+        }
     }
 }

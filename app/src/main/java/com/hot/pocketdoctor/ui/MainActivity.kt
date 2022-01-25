@@ -1,13 +1,18 @@
 package com.hot.pocketdoctor.ui
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.RecyclerView
 import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.ActivityMainBinding
+import com.hot.pocketdoctor.databinding.ItemReportsRecyclerBinding
 import com.hot.pocketdoctor.ui.home.HomeFragment
 import com.hot.pocketdoctor.ui.mypage.MyPageFragment
+import com.hot.pocketdoctor.ui.reports.Reports
 import com.hot.pocketdoctor.ui.reports.ReportsFragment
 
 class MainActivity : AppCompatActivity() {
