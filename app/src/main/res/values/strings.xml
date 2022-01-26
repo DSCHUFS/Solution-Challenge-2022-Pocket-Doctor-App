@@ -17,18 +17,11 @@
     <string name="home_fragment_anxiety">Anxiety</string>
     <string name="home_fragment_etc">Etc</string>
 
-    <!-- Treatment List -->
-    <string name="treatment_list_title">Pocket Doctor Treatment Rooms</string>
-
     <!-- Hospital Detail -->
     <string name="hospital_detail_information">Information</string>
     <string name="hospital_detail_counseling_time">Counseling Time</string>
     <string name="hospital_detail_location">Location</string>
     <string name="hospital_detail_request_button">Request Consultation</string>
-
-    <!-- Reservation -->
-    <string name="reservation_title">Consultation Application</string>
-    <string name="reservation_date_time">Choose date and time</string>
 
     <!-- Login Home -->
     <string name="login_home_move_to_login">Continue with Pocket Doctor</string>
@@ -63,5 +56,18 @@
     <string name="search_latest_history">Latest History</string>
     <string name="search_delete_all">Delete All</string>
     <string name="search_result">Search Result</string>
+
+    <!-- Reservation -->
+    <string name="reservation_title">Consultation Application</string>
+    <string name="reservation_date_time">Choose date and time</string>
+    <string name="reservation_problem">Tell me what is your problem</string>
+    <string name="reservation_problem_hint">Your Problem</string>
+    <string name="reservation_contact">How do I contact you?</string>
+    <string name="reservation_type_voice">Voice</string>
+    <string name="reservation_type_video">Video</string>
+    <string name="reservation_complete">Make Reservation</string>
+
+    <!-- Treatment List -->
+    <string name="treatment_list_title">Pocket Doctor Treatment Rooms</string>
 
 </resources>
