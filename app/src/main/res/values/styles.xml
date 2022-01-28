@@ -17,4 +17,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="TabLayoutText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
 </resources>
