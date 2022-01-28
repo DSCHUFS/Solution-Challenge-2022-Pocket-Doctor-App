@@ -70,4 +70,29 @@
     <!-- Treatment List -->
     <string name="treatment_list_title">Pocket Doctor Treatment Rooms</string>
 
+    <!-- Reports -->
+    <string name="reports_title">My Medical Reports</string>
+
+    <!-- Find Account -->
+    <string name="find_account_title">Find Your Account</string>
+    <string name="find_account_phone_num_hint">Phone Number</string>
+    <string name="find_account_verify">Verify</string>
+    <string name="find_account_code_hint">Verification Code</string>
+    <string name="find_account_button">Find Account</string>
+    <string name="find_password_title">Find Your Password</string>
+    <string name="find_password_email_hint">Email</string>
+    <string name="find_password_phone_number_hint">Phone Number</string>
+    <string name="find_password_verify">Verify</string>
+    <string name="find_password_code_hint">Verification Code</string>
+    <string name="find_password_button">Find Password</string>
+    <string name="display_account_title">Find Your Account</string>
+    <string name="display_account_subtitle">Your Account is</string>
+    <string name="display_account_login">Log In</string>
+    <string name="display_account_find_password">Find Password</string>
+    <string name="change_password_title">Change Your Password</string>
+    <string name="change_password_email_hint">New Password</string>
+    <string name="change_password_confirm_password_hint">New Password Again</string>
+    <string name="change_password_button">Save Password</string>
+
+
 </resources>

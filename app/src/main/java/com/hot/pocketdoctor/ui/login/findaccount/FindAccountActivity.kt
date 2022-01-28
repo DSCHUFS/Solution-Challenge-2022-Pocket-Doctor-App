@@ -10,5 +10,9 @@ class FindAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFindAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.findAccountVerifyButton.setOnClickListener {
+            binding.findAccountVerifyButton.isSelected = binding.findAccountVerifyButton.isSelected != true
+        }
     }
 }
