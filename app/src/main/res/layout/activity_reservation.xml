@@ -36,7 +36,8 @@
         android:src="@drawable/ic_selector_24"
         app:layout_constraintBottom_toBottomOf="@+id/reservation_date_time_title_textView"
         app:layout_constraintStart_toEndOf="@+id/reservation_date_time_title_textView"
-        app:layout_constraintTop_toTopOf="@+id/reservation_date_time_title_textView" />
+        app:layout_constraintTop_toTopOf="@+id/reservation_date_time_title_textView"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/reservation_problem_title_textView"
@@ -44,26 +45,97 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
-        android:text="Tell me what is your problem"
+        android:layout_marginTop="96dp"
+        android:text="@string/reservation_problem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/reservation_date_time_title_textView" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="0dp"
+        android:id="@+id/reservation_problem_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/reservation_problem_title_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/reservation_problem_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Problem" />
+            android:gravity="start"
+            android:hint="@string/reservation_problem_hint"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:maxLines="7"
+            android:scrollbars="vertical"
+            android:textIsSelectable="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/reservation_contact_title_textView"
+        style="@style/BaseSubtitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/reservation_contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservation_problem_textInputLayout" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reservation_contact_title_textView">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/reservation_type_voice_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/primary_second_blue"
+            android:onClick="onRadioButtonClicked"
+            android:padding="20dp"
+            android:text="@string/reservation_type_voice"
+            android:textColor="@drawable/selector_radio_button_text_color"
+            android:textSize="16sp" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/reservation_type_video_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/primary_second_blue"
+            android:onClick="onRadioButtonClicked"
+            android:padding="20dp"
+            android:text="@string/reservation_type_video"
+            android:textColor="@drawable/selector_radio_button_text_color"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signup_next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/button_primary_round_blue"
+        android:text="@string/reservation_complete"
+        android:textAllCaps="false"
+        android:textColor="@color/background_white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
