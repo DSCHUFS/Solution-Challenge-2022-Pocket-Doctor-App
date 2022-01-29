@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true"
+        android:drawable="@drawable/button_authenticate_selected_round_blue"
+        android:color="@color/primary_second_blue"/>
+
+    <item android:state_selected="false"
+        android:drawable="@drawable/button_authenticate_unselected_round_gray"
+        android:color="@color/hint_gray" />
+
+</selector>

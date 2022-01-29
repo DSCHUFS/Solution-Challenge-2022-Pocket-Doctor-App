@@ -6,4 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.findaccount.FindAccountActivity">
 
+    <TextView
+        android:id="@+id/find_account_title_textView"
+        style="@style/BaseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/find_account_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/find_account_phone_number_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/find_account_title_textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/find_account_phone_number_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/find_account_phone_num_hint"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/find_account_verify_button"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/selector_verify_button"
+        android:text="@string/find_account_verify"
+        android:textAllCaps="false"
+        android:textColor="@drawable/selector_verify_button"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/find_account_phone_number_textInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/find_account_phone_number_textInputLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/find_account_code_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/find_account_verify_button">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/find_account_code_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/find_account_code_hint"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/phone_auth_register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/button_primary_round_blue"
+        android:text="@string/find_account_button"
+        android:textAllCaps="false"
+        android:textColor="@color/background_white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
