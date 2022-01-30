@@ -103,5 +103,13 @@
     <!-- Splash -->
     <string name="splash_logo">Pocket Doctor</string>
 
+    <!-- My Page -->
+    <string name="my_page_title">My Page</string>
+    <string name="my_page_user">Please Login First</string>
+    <string name="my_page_update_info">Update My Information</string>
+    <string name="my_page_notification">Notification</string>
+    <string name="my_page_notice">Notice</string>
+    <string name="my_page_license">License</string>
+
 
 </resources>

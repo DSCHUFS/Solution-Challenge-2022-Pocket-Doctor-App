@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginEnd="18dp"
         app:civ_border_overlay="false"
-        tools:src="@drawable/ic_selector_24" />
+        tools:src="@drawable/ic_selector_blue_24" />
 
     <TextView
         android:id="@+id/search_doctor_name_textView"
