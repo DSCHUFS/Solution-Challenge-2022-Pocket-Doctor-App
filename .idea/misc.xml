@@ -26,6 +26,7 @@
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_reports_24.xml" value="0.1648148148148148" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_search_24.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_selector_24.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/ic_selector_black_24.xml" value="0.5697916666666667" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/selector_bottom_navigation_color.xml" value="0.42407407407407405" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/tab_layout_round_gray.xml" value="0.21296296296296297" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/tab_layout_selected_round_gray.xml" value="0.5697916666666667" />
@@ -51,6 +52,7 @@
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_treatment_list.xml" value="0.264" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_update_profile.xml" value="0.192481884057971" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/button_login_home.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/custom_my_page_tab.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_my_page.xml" value="0.4" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_on_boarding.xml" value="0.33125" />

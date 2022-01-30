@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:src="@drawable/ic_selector_24"
+        android:src="@drawable/ic_selector_blue_24"
         app:layout_constraintBottom_toBottomOf="@+id/reservation_date_time_title_textView"
         app:layout_constraintStart_toEndOf="@+id/reservation_date_time_title_textView"
         app:layout_constraintTop_toTopOf="@+id/reservation_date_time_title_textView"
