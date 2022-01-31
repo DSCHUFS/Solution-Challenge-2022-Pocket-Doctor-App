@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.login.findaccount.FindAccountActivity">
 
+    <TextView
+        android:id="@+id/find_account_textview"
+        style="@style/BaseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/find_account_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
