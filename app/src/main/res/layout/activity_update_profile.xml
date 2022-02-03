@@ -6,4 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".ui.mypage.UpdateProfileActivity">
 
+    <TextView
+        android:id="@+id/update_profile_title_textView"
+        style="@style/BaseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/update_profile_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/update_profile_name_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update_profile_title_textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/update_profile_name_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/update_profile_name"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/update_profile_pw_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update_profile_name_textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/update_profile_pw_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/update_profile_pw"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/update_profile_pw_again_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update_profile_pw_textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/update_profile_pw_again_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/update_profile_pw_again"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_profile_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_primary_round_blue"
+        android:text="@string/update_profile_save_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/background_white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_profile_pw_again_textInputLayout" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/update_profile_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_login_round_lightblue"
+        android:text="@string/update_profile_logout_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_second_blue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update_profile_save_btn" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

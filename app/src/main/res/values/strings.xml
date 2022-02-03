@@ -110,6 +110,34 @@
     <string name="my_page_notification">Notification</string>
     <string name="my_page_notice">Notice</string>
     <string name="my_page_license">License</string>
+    <!--Reports-->
+    <string name="reports_fragment_title">My Medical Reports</string>
+
+    <!--Medication-->
+    <string name="medications_title">Your Medications</string>
+    <string name="medication_register_title">Register your \nmedication schedules</string>
+    <string name="medication_register_day">What day will you take it?</string>
+    <string name="medication_register_time">When will you take it?</string>
+    <string name="medication_register_name">Tell me your medication name</string>
+    <string name="medication_register_button">Save Information</string>
+    <string name="medication_name_hint">Name</string>
+
+
+    <!--Update My Information-->
+    <string name="update_profile_title">Update My Information</string>
+    <string name="update_profile_name">Name</string>
+    <string name="update_profile_pw">Password</string>
+    <string name="update_profile_pw_again">Password Again</string>
+    <string name="update_profile_save_btn">Save</string>
+    <string name="update_profile_logout_btn">Logout</string>
+
+
+
+    <!--Receive Notification-->
+    <string name="receive_notification_title">Receive Notification</string>
+    <string name="notification_all">Notification All</string>
+    <string name="notification_only_medication">Notification Only Medication</string>
+
 
 
 </resources>
