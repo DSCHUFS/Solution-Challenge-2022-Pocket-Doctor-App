@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.treatment.TreatmentListActivity">
+    tools:context=".presentation.treatment.TreatmentListActivity">
 
     <TextView
         android:id="@+id/treatment_list_title_textView"

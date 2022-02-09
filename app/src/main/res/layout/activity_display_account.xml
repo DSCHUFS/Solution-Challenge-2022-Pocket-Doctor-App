@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.findaccount.DisplayAccountActivity">
+    tools:context=".presentation.login.findaccount.DisplayAccountActivity">
 
     <TextView
         android:id="@+id/display_account_title_textView"

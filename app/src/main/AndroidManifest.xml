@@ -12,61 +12,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketDoctor">
         <activity
-            android:name=".ui.login.findpassword.ChangePasswordActivity"
+            android:name=".presentation.login.findpassword.ChangePasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.findaccount.DisplayAccountActivity"
+            android:name=".presentation.login.findaccount.DisplayAccountActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.findpassword.FindPasswordActivity"
+            android:name=".presentation.login.findpassword.FindPasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.findaccount.FindAccountActivity"
+            android:name=".presentation.login.findaccount.FindAccountActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".presentation.login.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.reports.ReportsDetailActivity"
+            android:name=".presentation.reports.ReportsDetailActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.signup.PhoneAuthActivity"
+            android:name=".presentation.signup.PhoneAuthActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.signup.SignUpActivity"
+            android:name=".presentation.signup.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.reservation.ReservationActivity"
+            android:name=".presentation.reservation.ReservationActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.hospitaldetail.HospitalDetailActivity"
+            android:name=".presentation.hospitaldetail.HospitalDetailActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.medication.MedicationRegisterActivity"
+            android:name=".presentation.medication.MedicationRegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.medication.MedicationInfoActivity"
+            android:name=".presentation.medication.MedicationInfoActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.mypage.settings.NoticeActivity"
+            android:name=".presentation.mypage.settings.NoticeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.mypage.settings.NotificationSettingsActivity"
+            android:name=".presentation.mypage.settings.NotificationSettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.mypage.UpdateProfileActivity"
+            android:name=".presentation.mypage.UpdateProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.login.LogInHomeActivity"
+            android:name=".presentation.login.LogInHomeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.search.SearchActivity"
+            android:name=".presentation.search.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.treatment.TreatmentListActivity"
+            android:name=".presentation.treatment.TreatmentListActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".presentation.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -75,7 +75,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true" />
     </application>
 
