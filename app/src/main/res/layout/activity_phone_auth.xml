@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.signup.PhoneAuthActivity">
+    tools:context=".presentation.signup.PhoneAuthActivity">
 
     <TextView
         android:id="@+id/phone_auth_title_textView"

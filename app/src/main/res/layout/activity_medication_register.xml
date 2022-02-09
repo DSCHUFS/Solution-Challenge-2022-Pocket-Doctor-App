@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:circularflow_defaultRadius="20dp"
     app:circularflow_radiusInDP="100dp"
-    tools:context=".ui.medication.MedicationRegisterActivity">
+    tools:context=".presentation.medication.MedicationRegisterActivity">
 
     <TextView
         android:id="@+id/medication_register_textview"
