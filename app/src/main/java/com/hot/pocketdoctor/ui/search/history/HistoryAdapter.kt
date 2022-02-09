@@ -1,15 +1,12 @@
 package com.hot.pocketdoctor.ui.search.history
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.hot.pocketdoctor.R
-import com.hot.pocketdoctor.data.source.search.local.History
+import com.hot.pocketdoctor.data.datasource.search.local.History
 import com.hot.pocketdoctor.databinding.ItemSearchHistoryBinding
 import com.hot.pocketdoctor.databinding.ItemSearchHistoryHeaderBinding
-import java.lang.ClassCastException
 
 class HistoryAdapter(val historyDeleteClickedListener: (String) -> Unit) : ListAdapter<History, RecyclerView.ViewHolder>(diffUtil) {
 
