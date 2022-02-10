@@ -21,10 +21,12 @@
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="399dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medication_register_day_textview">
 
@@ -33,7 +35,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mon"
+            android:text="@string/medication_register_day_mon"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
 
@@ -43,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Tue"
+            android:text="@string/medication_register_day_tue"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
 
@@ -53,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Wed"
+            android:text="@string/medication_register_day_wed"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
 
@@ -62,7 +64,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thu"
+            android:text="@string/medication_register_day_thu"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
 
@@ -72,7 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Fri"
+            android:text="@string/medication_register_day_fri"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
 
@@ -81,7 +83,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sat"
+            android:text="@string/medication_register_day_sat"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
 
@@ -90,7 +92,7 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sun"
+            android:text="@string/medication_register_day_sun"
             app:chipStrokeColor="@color/primary_second_blue"
             app:chipStrokeWidth="1.5dp" />
     </com.google.android.material.chip.ChipGroup>
@@ -155,7 +157,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/medication_register_time_btn"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
@@ -181,5 +183,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medication_name_textInputLayout" />
+
+    <TextView
+        android:id="@+id/register_time_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/register_time_textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medication_register_time_textview" />
+
+    <TextView
+        android:id="@+id/register_time_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/register_time_textView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/register_time_textView1"
+        app:layout_constraintTop_toBottomOf="@+id/medication_register_time_textview" />
+
+    <TextView
+        android:id="@+id/register_time_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/register_time_textView2"
+        app:layout_constraintTop_toBottomOf="@+id/medication_register_time_textview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

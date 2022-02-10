@@ -1,14 +1,18 @@
 package com.hot.pocketdoctor.presentation.reports
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hot.pocketdoctor.databinding.FragmentReportsBinding
 import com.hot.pocketdoctor.databinding.ItemReportsRecyclerBinding
+import com.hot.pocketdoctor.presentation.medication.MedicationInfoActivity
+import com.hot.pocketdoctor.presentation.medication.MedicationRegisterActivity
 
 class ReportsFragment : Fragment() {
 
@@ -17,8 +21,7 @@ class ReportsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         _binding = FragmentReportsBinding.inflate(inflater,container,false)
         val view = binding.root
@@ -30,6 +33,11 @@ class ReportsFragment : Fragment() {
         val reportRecyclerAdapter = ReportRecyclerAdapter(reports)
         binding.ReportRecyclerview.adapter = reportRecyclerAdapter
         binding.ReportRecyclerview.layoutManager = LinearLayoutManager(this.activity)
+        binding.iconMedicine.setOnClickListener {
+            //Toast.makeText(this.activity,"click",Toast.LENGTH_SHORT).show()
+            val nextIntent = Intent(this.activity, MedicationInfoActivity::class.java)
+            startActivity(nextIntent)
+        }
     }
     private fun loadReportData() : MutableList<Reports> {
         val reportList = mutableListOf<Reports>()
