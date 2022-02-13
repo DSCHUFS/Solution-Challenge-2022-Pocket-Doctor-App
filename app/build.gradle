@@ -81,6 +81,10 @@ dependencies {
     // Jetpack - Fragment
     implementation "androidx.fragment:fragment-ktx:1.4.1"
 
+    // Jetpack - Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.0"
+
     // Test
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
