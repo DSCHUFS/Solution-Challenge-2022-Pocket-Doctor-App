@@ -33,9 +33,6 @@
             android:name=".presentation.reports.ReportsDetailActivity"
             android:exported="true" />
         <activity
-            android:name=".presentation.signup.PhoneAuthActivity"
-            android:exported="true" />
-        <activity
             android:name=".presentation.signup.SignUpActivity"
             android:exported="true">
             <intent-filter>
