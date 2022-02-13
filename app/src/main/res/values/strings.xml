@@ -43,6 +43,7 @@
     <string name="signup_cpw_hint">Password Again</string>
     <string name="signup_phone_hint">Phone Number</string>
     <string name="signup_next">Next</string>
+    <string name="signup_create">Create Account</string>
 
     <!-- Phone Authentication -->
     <string name="phone_auth_title">We need your verification</string>
@@ -130,7 +131,6 @@
     <string name="medication_name_hint">Name</string>
 
 
-
     <!--Update My Information-->
     <string name="update_profile_title">Update My Information</string>
     <string name="update_profile_name">Name</string>
@@ -140,12 +140,21 @@
     <string name="update_profile_logout_btn">Logout</string>
 
 
-
     <!--Receive Notification-->
     <string name="receive_notification_title">Receive Notification</string>
     <string name="notification_all">Notification All</string>
     <string name="notification_only_medication">Notification Only Medication</string>
 
+    <string name="signup_message_tos"><u>Terms of Service</u></string>
+    <string name="signup_message_privacy"><u>Terms of Privacy</u></string>
+    <string name="signup_email_title">Email</string>
+    <string name="signup_message_check_email">Please Check Your Email Format</string>
+    <string name="signup_name_title">Name</string>
+    <string name="signup_message_password_notice">Please enter at least 8 characters\nincluding English and numbers.</string>
+    <string name="signup_password_title">Password</string>
+    <string name="signup_password_again_title">Password Again</string>
+    <string name="signup_phone_number_notice">Please enter full phone number\nex. 010-1234-5678</string>
+    <string name="signup_phone_number_title">Phone Number</string>
 
 
 </resources>
