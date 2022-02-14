@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/button_primary_round_blue.xml" value="0.3277777777777778" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/rectangle_light_gray_radius_.xml" value="0.3277777777777778" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/drawable/selector_edit_text_tracker_primary_blue.xml" value="0.3277777777777778" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_sign_up_email.xml" value="0.27102330293819654" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_sign_up_email_name.xml" value="0.4" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_sign_up_password.xml" value="0.264" />
+        <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/PocketDoctor/app/src/main/res/layout/fragment_sign_up_phone_number.xml" value="0.264" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_hospital_detail.xml" value="0.24537037037037038" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_main.xml" value="0.1259259259259259" />
         <entry key="..\:/Users/Jaesung/Documents/GitRepo/Project/Solution-Challenge-2022-Pocket-Doctor/PocketDoctor/app/src/main/res/layout/activity_reservation.xml" value="0.24537037037037038" />
@@ -35,5 +43,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>
