@@ -1,8 +1,12 @@
 package com.hot.pocketdoctor.presentation.login
 
+
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.hot.pocketdoctor.databinding.ActivityLoginBinding
+import com.hot.pocketdoctor.presentation.MainActivity
+import com.hot.pocketdoctor.presentation.signup.SignUpActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -10,5 +14,26 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setButtonClickListener()
+    }
+
+    private fun setButtonClickListener() {
+        with(binding) {
+            btnLogin.setOnClickListener {
+                // 로그인
+                val intent = Intent(this@LoginActivity, MainActivity::class.java).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                }
+                startActivity(intent)
+                finish()
+            }
+
+            btnSignup.setOnClickListener {
+                startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
+                finish()
+            }
+        }
+
     }
 }
