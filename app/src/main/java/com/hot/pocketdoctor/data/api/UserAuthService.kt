@@ -1,6 +1,8 @@
 package com.hot.pocketdoctor.data.api
 
+import com.hot.pocketdoctor.data.model.request.signin.ReqSignInSuccessData
 import com.hot.pocketdoctor.data.model.request.signup.ReqSignUpSuccessData
+import com.hot.pocketdoctor.data.model.response.signin.ResSignInSuccessData
 import com.hot.pocketdoctor.data.model.response.signup.ResSignUpSuccessData
 import retrofit2.Response
 import retrofit2.http.Body
@@ -10,6 +12,11 @@ interface UserAuthService {
 
     @POST("/user/signup")
     suspend fun postSignUp(
-        @Body body : ReqSignUpSuccessData
+        @Body body: ReqSignUpSuccessData
     ) : ResSignUpSuccessData
+
+    @POST("/user/signin")
+    suspend fun postSignIn(
+        @Body body: ReqSignInSuccessData
+    ) : ResSignInSuccessData
 }
