@@ -47,7 +47,7 @@ class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewMode
         runCatching { signUpRepository.postSignUpResult(ReqSignUpSuccessData(_email, _password, _name, _phoneNumber)) }
             .onSuccess {
                 _isSignUpSuccess.postValue(true)
-                Log.e(SIGNUP_SUCCESS_TAG, "${it.code}-${it.message}")
+                Log.e(SIGNUP_SUCCESS_TAG, "${it.status}-${it.message}")
             }
             .onFailure {
                 Log.e(SIGNUP_FAILED_TAG, "SignUp Failed")

@@ -7,5 +7,5 @@ data class SignUpData(
     val message: String,
 
     @SerializedName("status")
-    val code: Int
+    val status: Int
 )
