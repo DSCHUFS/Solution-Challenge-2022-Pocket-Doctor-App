@@ -1,8 +1,11 @@
-package com.hot.pocketdoctor.domain.model
+package com.hot.pocketdoctor.data.model.response.signin
 
 import com.google.gson.annotations.SerializedName
 
-data class SignUpData(
+data class ResSignInSuccessData(
+    @SerializedName("token")
+    val token: String,
+
     @SerializedName("message")
     val message: String,
 

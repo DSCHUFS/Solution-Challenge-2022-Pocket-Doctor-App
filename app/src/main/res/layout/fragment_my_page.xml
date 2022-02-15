@@ -7,7 +7,7 @@
     tools:context=".presentation.mypage.MyPageFragment">
 
     <TextView
-        android:id="@+id/my_page_title_textView"
+        android:id="@+id/tv_my_page_title"
         style="@style/BaseTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
-        android:id="@+id/my_page_login_container"
+        android:id="@+id/rl_login_container"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -28,7 +28,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_page_title_textView">
+        app:layout_constraintTop_toBottomOf="@id/tv_my_page_title">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +51,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/my_page_update_info_container"
+        android:id="@+id/rl_update_info_container"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -61,7 +61,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_page_login_container">
+        app:layout_constraintTop_toBottomOf="@id/rl_login_container">
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/my_page_notification_container"
+        android:id="@+id/rl_notification_container"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -94,7 +94,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_page_update_info_container">
+        app:layout_constraintTop_toBottomOf="@id/rl_update_info_container">
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/my_page_notice_container"
+        android:id="@+id/rl_notice_container"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -127,7 +127,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_page_notification_container">
+        app:layout_constraintTop_toBottomOf="@id/rl_notification_container">
 
         <TextView
             android:layout_width="wrap_content"
@@ -150,7 +150,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/my_page_license_container"
+        android:id="@+id/rl_license_container"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -160,7 +160,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/my_page_notice_container">
+        app:layout_constraintTop_toBottomOf="@id/rl_notice_container">
 
         <TextView
             android:layout_width="wrap_content"

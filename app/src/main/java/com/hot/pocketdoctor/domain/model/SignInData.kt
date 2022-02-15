@@ -2,7 +2,10 @@ package com.hot.pocketdoctor.domain.model
 
 import com.google.gson.annotations.SerializedName
 
-data class SignUpData(
+data class SignInData(
+    @SerializedName("token")
+    val token: String,
+
     @SerializedName("message")
     val message: String,
 

@@ -7,7 +7,7 @@
     tools:context=".presentation.login.LoginActivity">
 
     <TextView
-        android:id="@+id/login_title_textView"
+        android:id="@+id/tv_title"
         style="@style/BaseTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_email_textInputLayout"
+        android:id="@+id/til_login_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,10 +26,10 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_title_textView">
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_email_editText"
+            android:id="@+id/et_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login_email_hint"
@@ -37,7 +37,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/login_password_textInputLayout"
+        android:id="@+id/til_login_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,10 +45,10 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_email_textInputLayout">
+        app:layout_constraintTop_toBottomOf="@id/til_login_email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/login_password_editText"
+            android:id="@+id/et_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -56,44 +56,44 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/login_find_account_textView"
+        android:id="@+id/tv_find_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:text="@string/login_find_account"
         android:textColor="@color/hint_gray"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/login_find_divider"
-        app:layout_constraintEnd_toStartOf="@+id/login_find_divider"
+        app:layout_constraintBottom_toBottomOf="@id/view_divider"
+        app:layout_constraintEnd_toStartOf="@+id/view_divider"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/login_find_divider" />
+        app:layout_constraintTop_toTopOf="@id/view_divider" />
 
     <View
-        android:id="@+id/login_find_divider"
+        android:id="@+id/view_divider"
         android:layout_width="1dp"
         android:layout_height="18dp"
         android:layout_marginTop="24dp"
         android:background="@color/hint_gray"
-        app:layout_constraintEnd_toStartOf="@+id/login_find_password_textView"
-        app:layout_constraintStart_toEndOf="@id/login_find_account_textView"
-        app:layout_constraintTop_toBottomOf="@+id/login_password_textInputLayout" />
+        app:layout_constraintEnd_toStartOf="@+id/tv_find_password"
+        app:layout_constraintStart_toEndOf="@id/tv_find_account"
+        app:layout_constraintTop_toBottomOf="@+id/til_login_password" />
 
     <TextView
-        android:id="@+id/login_find_password_textView"
+        android:id="@+id/tv_find_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="@string/login_find_password"
         android:textColor="@color/hint_gray"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/login_find_divider"
+        app:layout_constraintBottom_toBottomOf="@id/view_divider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/login_find_divider"
-        app:layout_constraintTop_toTopOf="@+id/login_find_divider" />
+        app:layout_constraintStart_toEndOf="@id/view_divider"
+        app:layout_constraintTop_toTopOf="@+id/view_divider" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/login_login_button"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -106,10 +106,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_find_divider" />
+        app:layout_constraintTop_toBottomOf="@id/view_divider" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/login_register_button"
+        android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -122,7 +122,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_login_button" />
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
