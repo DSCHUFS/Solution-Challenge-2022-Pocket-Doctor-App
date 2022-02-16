@@ -1,6 +1,7 @@
 package com.hot.pocketdoctor.di
 
 import com.google.gson.GsonBuilder
+import com.hot.pocketdoctor.data.api.TreatmentService
 import com.hot.pocketdoctor.data.api.UserAuthService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -38,5 +39,9 @@ val networkModule = module {
 
     single<UserAuthService> {
         get<Retrofit>().create(UserAuthService::class.java)
+    }
+
+    single<TreatmentService> {
+        get<Retrofit>().create(TreatmentService::class.java)
     }
 }
