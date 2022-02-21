@@ -2,15 +2,13 @@ package com.hot.pocketdoctor.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.hot.pocketdoctor.databinding.FragmentHomeBinding
-import com.hot.pocketdoctor.presentation.hospitaldetail.HospitalDetailActivity
 import com.hot.pocketdoctor.presentation.search.SearchActivity
-import com.hot.pocketdoctor.presentation.treatment.TreatmentListActivity
-import com.hot.pocketdoctor.util.navigate
+import com.hot.pocketdoctor.presentation.treatment.TreatmentActivity
 
 class HomeFragment : Fragment() {
 
@@ -48,7 +46,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToHospitalDetail() {
-        startActivity(Intent(context, TreatmentListActivity::class.java))
+        startActivity(Intent(context, TreatmentActivity::class.java))
     }
 
     override fun onDestroyView() {

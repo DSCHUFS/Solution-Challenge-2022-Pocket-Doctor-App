@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.treatment.TreatmentListFragment">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/BaseTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/treatment_list_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_treatment_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_treatment_list" />
+
+    <!--    <com.google.android.material.tabs.TabLayout-->
+    <!--        android:id="@+id/treatment_list_tabLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginStart="2dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:layout_marginEnd="2dp"-->
+    <!--        android:background="@drawable/background_tab_layout_white"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:overScrollMode="never"-->
+    <!--        app:tabGravity="center"-->
+    <!--        app:tabIndicator="@drawable/background_tab_layout_selected_blue"-->
+    <!--        app:tabIndicatorAnimationMode="linear"-->
+    <!--        app:tabIndicatorColor="@color/primary_second_blue"-->
+    <!--        app:tabIndicatorHeight="40dp"-->
+    <!--        app:tabMode="scrollable"-->
+    <!--        app:tabRippleColor="@null"-->
+    <!--        app:tabSelectedTextColor="@color/background_white"-->
+    <!--        app:tabTextAppearance="@style/TabLayoutText"-->
+    <!--        app:tabTextColor="@color/primary_second_blue" />-->
+
+    <!--    <androidx.viewpager2.widget.ViewPager2-->
+    <!--        android:id="@+id/treatment_list_viewPager"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginStart="2dp"-->
+    <!--        android:layout_marginEnd="2dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
