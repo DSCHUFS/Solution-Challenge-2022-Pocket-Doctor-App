@@ -13,6 +13,19 @@
         <action
             android:id="@+id/action_treatmentListFragment_to_hospitalDetailFragment"
             app:destination="@id/hospitalDetailFragment" />
+        <argument
+            android:name="doctorNo"
+            app:argType="integer" />
+        <argument
+            android:name="doctorName"
+            app:argType="string" />
+        <argument
+            android:name="hospitalName"
+            app:argType="string" />
+        <argument
+            android:name="subject"
+            app:argType="string" />
+
     </fragment>
 
     <fragment

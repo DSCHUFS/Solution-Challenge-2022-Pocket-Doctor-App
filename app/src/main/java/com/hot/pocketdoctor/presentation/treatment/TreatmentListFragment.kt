@@ -1,45 +1,81 @@
 package com.hot.pocketdoctor.presentation.treatment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.FragmentTreatmentListBinding
+import com.hot.pocketdoctor.databinding.ItemTreatmentListBinding
+import com.hot.pocketdoctor.presentation.base.BaseFragment
 import com.hot.pocketdoctor.presentation.treatment.adapter.TreatmentListAdapter
+import com.hot.pocketdoctor.presentation.treatment.model.DoctorListData
+import com.hot.pocketdoctor.presentation.treatment.viewmodel.TreatmentViewModel
+import com.hot.pocketdoctor.util.navigateWithData
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class TreatmentListFragment : Fragment() {
+class TreatmentListFragment :
+    BaseFragment<FragmentTreatmentListBinding>(R.layout.fragment_treatment_list) {
 
-    private var _binding: FragmentTreatmentListBinding? = null
-    private val binding get() = _binding!!
+    /**
+     * 1. 병원 정보 로딩
+     * 2. 로딩한 데이터 어댑터 리스트에 넣기
+     * 3. 리사이클러뷰 세팅
+     * 4. 리사이클러뷰 아이템 클릭 이벤트 (id에 맞게)
+     */
+
+    private val treatmentViewModel: TreatmentViewModel by sharedViewModel()
 
     private lateinit var treatmentListAdapter: TreatmentListAdapter
+    private lateinit var doctorList: MutableList<DoctorListData>
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentTreatmentListBinding.inflate(inflater, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        initRecyclerView()
+        initTreatmentListAdapter()
+        fetchDoctorInfo()
+        setRecyclerView()
+        observeDoctorInfoData()
 
-        val view = binding.root
-        return view
     }
 
-    private fun initRecyclerView() {
+    private fun initTreatmentListAdapter() {
         treatmentListAdapter = TreatmentListAdapter()
-        binding.rvTreatmentList.apply {
-            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-            adapter = treatmentListAdapter
+        binding.rvTreatmentList.adapter = treatmentListAdapter
+    }
+
+    private fun fetchDoctorInfo() {
+        treatmentViewModel.queryDoctorInfo()
+    }
+
+    private fun observeDoctorInfoData() {
+        treatmentViewModel.doctorInfoData.observe(viewLifecycleOwner) { doctorInfoData ->
+            doctorList.addAll(doctorInfoData.result.map {
+                DoctorListData(
+                    doctorNo = it.doctorNo,
+                    doctorName = it.doctorName,
+                    hospitalName = it.hospitalName,
+                    subject = it.subject,
+                    availability = it.availability
+                )
+            })
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+
+    private fun setRecyclerView() {
+        treatmentListAdapter.doctorList = doctorList
+
+        treatmentListAdapter.setItemClickListener(object :
+            TreatmentListAdapter.OnItemClickListener {
+            override fun onItemClick(view: ItemTreatmentListBinding, position: Int) {
+                navigateWithData(
+                    TreatmentListFragmentDirections.actionTreatmentListFragmentToHospitalDetailFragment(
+                        // Data 전달
+                    )
+                )
+
+            }
+        })
+
     }
+
 }

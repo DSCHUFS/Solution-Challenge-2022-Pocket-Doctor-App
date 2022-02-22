@@ -7,9 +7,18 @@ object TreatmentMapper {
 
     fun mapperToDoctorInfoData(resDoctorInfoSuccessData: ResDoctorInfoSuccessData) : DoctorInfoData {
         return DoctorInfoData(
-            result = resDoctorInfoSuccessData.result as List<DoctorInfoData.DoctorInfo>,
-            message = resDoctorInfoSuccessData.message,
-            status = resDoctorInfoSuccessData.status
+            result = resDoctorInfoSuccessData.result.map { data ->
+                DoctorInfoData.DoctorInfo(
+                    doctorNo = data.doctorNo,
+                    doctorName = data.doctorName,
+                    hospitalName = data.hospitalName,
+                    subject = data.subject,
+                    availability = when (data.availability) {
+                        true -> "Available"
+                        false -> "Not Available"
+                    }
+                )
+            }
         )
     }
 }
