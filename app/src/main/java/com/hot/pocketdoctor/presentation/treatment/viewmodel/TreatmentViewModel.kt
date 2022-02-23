@@ -8,9 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.hot.pocketdoctor.domain.model.info.DoctorInfoData
 import com.hot.pocketdoctor.domain.model.info.HospitalDetailData
 import com.hot.pocketdoctor.domain.repository.DoctorInfoRepository
+import com.hot.pocketdoctor.domain.repository.HospitalInfoRepository
 import kotlinx.coroutines.launch
 
-class TreatmentViewModel(val doctorInfoRepository: DoctorInfoRepository) : ViewModel() {
+class TreatmentViewModel(
+    val doctorInfoRepository: DoctorInfoRepository,
+    val hospitalInfoRepository: HospitalInfoRepository
+) : ViewModel() {
 
     private var _hospitalDetailData = MutableLiveData<HospitalDetailData>()
     val hospitalDetailData: LiveData<HospitalDetailData> get() = _hospitalDetailData
@@ -18,7 +22,14 @@ class TreatmentViewModel(val doctorInfoRepository: DoctorInfoRepository) : ViewM
     private var _doctorInfoData = MutableLiveData<DoctorInfoData>()
     val doctorInfoData: LiveData<DoctorInfoData> get() = _doctorInfoData
 
-    fun queryDoctorInfo() = viewModelScope.launch {
+    private var _doctorNo: Int = 0
+    var doctorNo: Int = _doctorNo
+        set(value) {
+            _doctorNo = value
+            field = value
+        }
+
+    fun getDoctorInfo() = viewModelScope.launch {
         runCatching { doctorInfoRepository.fetchDoctorInfo() }
             .onSuccess {
                 _doctorInfoData.postValue(it)
@@ -30,15 +41,17 @@ class TreatmentViewModel(val doctorInfoRepository: DoctorInfoRepository) : ViewM
             }
     }
 
-//    fun queryHospitalDetail() = viewModelScope.launch {
-//        runCatching { }
-//            .onSuccess {
-//                _hospitalDetailData.postValue()
-//            }
-//            .onFailure {
-//                it.printStackTrace()
-//            }
-//    }
+    fun getHospitalDetail() = viewModelScope.launch {
+        runCatching { hospitalInfoRepository.fetchHospitalInfo(_doctorNo)}
+            .onSuccess {
+                _hospitalDetailData.postValue(it)
+                Log.e(HOSPITAL_SUCCESS_TAG, "$it")
+            }
+            .onFailure {
+                it.printStackTrace()
+                Log.e(HOSPITAL_FAILED_TAG, "${it.message}")
+            }
+    }
 
     companion object {
         const val HOSPITAL_SUCCESS_TAG = "HospitalInfo_Success"

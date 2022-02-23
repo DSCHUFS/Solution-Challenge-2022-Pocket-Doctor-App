@@ -1,7 +1,9 @@
 package com.hot.pocketdoctor.data.mapper
 
 import com.hot.pocketdoctor.data.model.response.info.ResDoctorInfoSuccessData
+import com.hot.pocketdoctor.data.model.response.info.ResHospitalInfoSuccessData
 import com.hot.pocketdoctor.domain.model.info.DoctorInfoData
+import com.hot.pocketdoctor.domain.model.info.HospitalDetailData
 
 object TreatmentMapper {
 
@@ -19,6 +21,15 @@ object TreatmentMapper {
                     }
                 )
             }
+        )
+    }
+
+    fun mapperToHospitalDetailData(resHospitalInfoSuccessData: ResHospitalInfoSuccessData) : HospitalDetailData {
+        return HospitalDetailData(
+            hospitalNo = resHospitalInfoSuccessData.hospitalNo,
+            hospitalHomePage = resHospitalInfoSuccessData.hospitalHomepage,
+            hospitalLocation = resHospitalInfoSuccessData.hospitalLocation,
+            hospitalTime = resHospitalInfoSuccessData.hospitalTime
         )
     }
 }
