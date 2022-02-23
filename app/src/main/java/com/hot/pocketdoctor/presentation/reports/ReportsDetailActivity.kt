@@ -13,8 +13,12 @@ class ReportsDetailActivity : AppCompatActivity() {
         binding = ActivityReportsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        with(binding){
+            userName.text = intent.getStringExtra("clickedReport_username")
+            date.text = intent.getStringExtra("clickedReport_reportTime")
+            symptom.text = intent.getStringExtra("clickedReport_symptom")
+            hospitalName.text = intent.getStringExtra("clickedReport_hospital")
+            doctorName.text = intent.getStringExtra("clickedReport_doctor")
+        }
     }
-
 }
-
