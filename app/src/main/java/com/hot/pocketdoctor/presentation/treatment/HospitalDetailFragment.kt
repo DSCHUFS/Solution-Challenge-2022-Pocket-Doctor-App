@@ -1,26 +1,22 @@
 package com.hot.pocketdoctor.presentation.treatment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.FragmentHospitalDetailBinding
+import com.hot.pocketdoctor.presentation.base.BaseFragment
+import com.hot.pocketdoctor.presentation.treatment.viewmodel.TreatmentViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class HospitalDetailFragment : Fragment() {
+class HospitalDetailFragment : BaseFragment<FragmentHospitalDetailBinding>(R.layout.fragment_hospital_detail) {
 
-    private var _binding: FragmentHospitalDetailBinding? = null
-    private val binding get() = _binding!!
+    private val treatmentViewModel: TreatmentViewModel by sharedViewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentHospitalDetailBinding.inflate(inflater, container, false)
+    private val args by navArgs<HospitalDetailFragmentArgs>()
 
-        val view = binding.root
-        return view
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
 }

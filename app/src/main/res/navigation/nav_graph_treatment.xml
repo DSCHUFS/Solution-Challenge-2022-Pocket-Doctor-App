@@ -13,6 +13,17 @@
         <action
             android:id="@+id/action_treatmentListFragment_to_hospitalDetailFragment"
             app:destination="@id/hospitalDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/hospitalDetailFragment"
+        android:name="com.hot.pocketdoctor.presentation.treatment.HospitalDetailFragment"
+        android:label="fragment_hospital_detail"
+        tools:layout="@layout/fragment_hospital_detail" >
+        <action
+            android:id="@+id/action_hospitalDetailFragment_to_reservationFragment"
+            app:destination="@id/reservationFragment" />
         <argument
             android:name="doctorNo"
             app:argType="integer" />
@@ -25,17 +36,6 @@
         <argument
             android:name="subject"
             app:argType="string" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/hospitalDetailFragment"
-        android:name="com.hot.pocketdoctor.presentation.treatment.HospitalDetailFragment"
-        android:label="fragment_hospital_detail"
-        tools:layout="@layout/fragment_hospital_detail" >
-        <action
-            android:id="@+id/action_hospitalDetailFragment_to_reservationFragment"
-            app:destination="@id/reservationFragment" />
     </fragment>
 
     <fragment
