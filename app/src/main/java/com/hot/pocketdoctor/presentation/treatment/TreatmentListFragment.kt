@@ -43,7 +43,7 @@ class TreatmentListFragment :
     }
 
     private fun fetchDoctorInfo() {
-        treatmentViewModel.queryDoctorInfo()
+        treatmentViewModel.getDoctorInfo()
     }
 
     private fun observeDoctorInfoData() {
@@ -70,6 +70,7 @@ class TreatmentListFragment :
                 navigateWithData(
                     TreatmentListFragmentDirections.actionTreatmentListFragmentToHospitalDetailFragment(
                         // Data 전달
+                        0, "aa", "aa", "Aaa"
                     )
                 )
 
