@@ -1,4 +1,4 @@
-package com.hot.pocketdoctor.data.model.response.info
+package com.hot.pocketdoctor.data.model.response.treatment
 
 import com.google.gson.annotations.SerializedName
 

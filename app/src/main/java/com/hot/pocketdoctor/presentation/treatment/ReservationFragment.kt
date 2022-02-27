@@ -5,30 +5,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
+import com.hot.pocketdoctor.R
+import com.hot.pocketdoctor.databinding.FragmentReservationBinding
 import com.hot.pocketdoctor.databinding.FragmentTreatmentListBinding
+import com.hot.pocketdoctor.presentation.base.BaseFragment
 import com.hot.pocketdoctor.presentation.treatment.viewmodel.TreatmentViewModel
+import com.hot.pocketdoctor.util.navigate
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class ReservationFragment : Fragment() {
-
-    private var _binding: FragmentTreatmentListBinding? = null
-    private val binding get() = _binding!!
+class ReservationFragment : BaseFragment<FragmentReservationBinding>(R.layout.fragment_reservation) {
 
     private val treatmentViewModel: TreatmentViewModel by sharedViewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentTreatmentListBinding.inflate(inflater, container, false)
+    private val args by navArgs<ReservationFragmentArgs>()
 
-        val view = binding.root
-        return view
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setMakeReservationButtonClickListener()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun setMakeReservationButtonClickListener() {
+        navigate(R.id.action_reservationFragment_to_mainActivity)
     }
+
 
 }

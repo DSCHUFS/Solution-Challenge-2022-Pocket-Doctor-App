@@ -1,15 +1,13 @@
 package com.hot.pocketdoctor.presentation.treatment.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.hot.pocketdoctor.databinding.ItemTreatmentListBinding
-import com.hot.pocketdoctor.domain.model.info.DoctorInfoData
+import com.hot.pocketdoctor.domain.model.treatment.DoctorInfoData
 import com.hot.pocketdoctor.presentation.treatment.TreatmentListFragmentDirections
-import com.hot.pocketdoctor.util.navigateWithData
 
 class DoctorListAdapter :
     ListAdapter<DoctorInfoData.DoctorInfo, DoctorListAdapter.DoctorListViewHolder>(DiffCallback) {

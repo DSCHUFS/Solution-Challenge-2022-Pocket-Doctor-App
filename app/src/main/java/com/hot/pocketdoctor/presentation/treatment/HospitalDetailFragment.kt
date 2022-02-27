@@ -8,6 +8,7 @@ import com.hot.pocketdoctor.databinding.FragmentHospitalDetailBinding
 import com.hot.pocketdoctor.presentation.base.BaseFragment
 import com.hot.pocketdoctor.presentation.treatment.viewmodel.TreatmentViewModel
 import com.hot.pocketdoctor.util.DateTimeUtils
+import com.hot.pocketdoctor.util.navigate
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class HospitalDetailFragment : BaseFragment<FragmentHospitalDetailBinding>(R.layout.fragment_hospital_detail) {
@@ -21,6 +22,7 @@ class HospitalDetailFragment : BaseFragment<FragmentHospitalDetailBinding>(R.lay
 
         fetchHospitalDetailData()
         observeHospitalDetailData()
+        setReservationButtonClickListener()
     }
 
     private fun fetchHospitalDetailData() {
@@ -57,6 +59,12 @@ class HospitalDetailFragment : BaseFragment<FragmentHospitalDetailBinding>(R.lay
             tvSunTime.text = hospitalTime["일"]
         }
 
+    }
+
+    private fun setReservationButtonClickListener() {
+        binding.btnRequestReservation.setOnClickListener {
+            navigate(R.id.action_hospitalDetailFragment_to_reservationFragment)
+        }
     }
 
 }

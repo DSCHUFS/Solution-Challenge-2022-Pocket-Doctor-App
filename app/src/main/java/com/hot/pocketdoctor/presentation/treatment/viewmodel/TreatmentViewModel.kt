@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hot.pocketdoctor.domain.model.info.DoctorInfoData
-import com.hot.pocketdoctor.domain.model.info.HospitalDetailData
+import com.hot.pocketdoctor.domain.model.treatment.DoctorInfoData
+import com.hot.pocketdoctor.domain.model.treatment.HospitalDetailData
 import com.hot.pocketdoctor.domain.repository.DoctorInfoRepository
 import com.hot.pocketdoctor.domain.repository.HospitalInfoRepository
 import kotlinx.coroutines.launch

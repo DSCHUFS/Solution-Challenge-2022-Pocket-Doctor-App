@@ -1,4 +1,4 @@
-package com.hot.pocketdoctor.domain.model.info
+package com.hot.pocketdoctor.domain.model.treatment
 
 
 data class DoctorInfoData(
