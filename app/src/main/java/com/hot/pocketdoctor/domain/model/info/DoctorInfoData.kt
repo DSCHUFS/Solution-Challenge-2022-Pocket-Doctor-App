@@ -12,4 +12,3 @@ data class DoctorInfoData(
         val availability: String
     )
 }
-

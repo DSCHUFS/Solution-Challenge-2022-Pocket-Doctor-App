@@ -21,7 +21,7 @@
     <string name="hospital_detail_information">Information</string>
     <string name="hospital_detail_counseling_time">Counseling Time</string>
     <string name="hospital_detail_location">Location</string>
-    <string name="hospital_detail_request_button">Request Consultation</string>
+    <string name="hospital_detail_request_button">Request Reservation</string>
 
     <!-- Login Home -->
     <string name="login_home_move_to_login">Continue with Pocket Doctor</string>
@@ -155,6 +155,13 @@
     <string name="signup_password_again_title">Password Again</string>
     <string name="signup_phone_number_notice">Please enter full phone number\nex. 010-1234-5678</string>
     <string name="signup_phone_number_title">Phone Number</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
 
 
 </resources>

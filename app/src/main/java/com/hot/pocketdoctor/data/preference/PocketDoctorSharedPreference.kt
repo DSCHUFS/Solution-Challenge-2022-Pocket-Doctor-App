@@ -15,7 +15,7 @@ object PocketDoctorSharedPreference {
         preferences = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
     }
 
-    fun getUserToken() = preferences.getString(USER_TOKEN, "Bearer ") ?: "Bearer "
+    fun getUserToken() = preferences.getString(USER_TOKEN, "")
 
     fun setUserToken(accessToken: String) = preferences.edit()
         .putString(USER_TOKEN, accessToken).apply()

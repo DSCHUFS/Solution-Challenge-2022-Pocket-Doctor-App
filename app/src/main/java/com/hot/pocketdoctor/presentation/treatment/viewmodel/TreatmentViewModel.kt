@@ -19,21 +19,15 @@ class TreatmentViewModel(
     private var _hospitalDetailData = MutableLiveData<HospitalDetailData>()
     val hospitalDetailData: LiveData<HospitalDetailData> get() = _hospitalDetailData
 
-    private var _doctorInfoData = MutableLiveData<DoctorInfoData>()
-    val doctorInfoData: LiveData<DoctorInfoData> get() = _doctorInfoData
+    private var _doctorInfoData = MutableLiveData<List<DoctorInfoData.DoctorInfo>>()
+    val doctorInfoData: LiveData<List<DoctorInfoData.DoctorInfo>> get() = _doctorInfoData
 
-    private var _doctorNo: Int = 0
-    var doctorNo: Int = _doctorNo
-        set(value) {
-            _doctorNo = value
-            field = value
-        }
 
     fun getDoctorInfo() = viewModelScope.launch {
         runCatching { doctorInfoRepository.fetchDoctorInfo() }
             .onSuccess {
-                _doctorInfoData.postValue(it)
-                Log.e(DOCTOR_SUCCESS_TAG, "$it")
+                _doctorInfoData.postValue(it.result)
+                Log.e(DOCTOR_SUCCESS_TAG, "${it.result}")
             }
             .onFailure {
                 it.printStackTrace()
@@ -41,8 +35,8 @@ class TreatmentViewModel(
             }
     }
 
-    fun getHospitalDetail() = viewModelScope.launch {
-        runCatching { hospitalInfoRepository.fetchHospitalInfo(_doctorNo)}
+    fun getHospitalDetail(doctorNo: Int) = viewModelScope.launch {
+        runCatching { hospitalInfoRepository.fetchHospitalInfo(doctorNo) }
             .onSuccess {
                 _hospitalDetailData.postValue(it)
                 Log.e(HOSPITAL_SUCCESS_TAG, "$it")
