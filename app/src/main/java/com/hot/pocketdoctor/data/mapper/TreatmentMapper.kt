@@ -4,6 +4,7 @@ import com.hot.pocketdoctor.data.model.response.info.ResDoctorInfoSuccessData
 import com.hot.pocketdoctor.data.model.response.info.ResHospitalInfoSuccessData
 import com.hot.pocketdoctor.domain.model.info.DoctorInfoData
 import com.hot.pocketdoctor.domain.model.info.HospitalDetailData
+import com.hot.pocketdoctor.util.SubjectUtils
 
 object TreatmentMapper {
 
@@ -14,7 +15,7 @@ object TreatmentMapper {
                     doctorNo = data.doctorNo,
                     doctorName = data.doctorName,
                     hospitalName = data.hospitalName,
-                    subject = data.subject,
+                    subject = SubjectUtils.convertSubjectWithHashTag(data.subject),
                     availability = when (data.availability) {
                         true -> "Available"
                         false -> "Not Available"
