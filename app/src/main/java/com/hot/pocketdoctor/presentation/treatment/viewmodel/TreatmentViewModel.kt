@@ -9,11 +9,13 @@ import com.hot.pocketdoctor.domain.model.treatment.DoctorInfoData
 import com.hot.pocketdoctor.domain.model.treatment.HospitalDetailData
 import com.hot.pocketdoctor.domain.repository.DoctorInfoRepository
 import com.hot.pocketdoctor.domain.repository.HospitalInfoRepository
+import com.hot.pocketdoctor.domain.repository.ReservationRepository
 import kotlinx.coroutines.launch
 
 class TreatmentViewModel(
     val doctorInfoRepository: DoctorInfoRepository,
-    val hospitalInfoRepository: HospitalInfoRepository
+    val hospitalInfoRepository: HospitalInfoRepository,
+    val reservationRepository: ReservationRepository
 ) : ViewModel() {
 
     private var _hospitalDetailData = MutableLiveData<HospitalDetailData>()
