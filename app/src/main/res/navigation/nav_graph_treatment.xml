@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_hospital"
+    app:startDestination="@id/treatmentListFragment">
+
+    <fragment
+        android:id="@+id/treatmentListFragment"
+        android:name="com.hot.pocketdoctor.presentation.treatment.TreatmentListFragment"
+        android:label="fragment_treatment_list"
+        tools:layout="@layout/fragment_treatment_list" >
+        <action
+            android:id="@+id/action_treatmentListFragment_to_hospitalDetailFragment"
+            app:destination="@id/hospitalDetailFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/hospitalDetailFragment"
+        android:name="com.hot.pocketdoctor.presentation.treatment.HospitalDetailFragment"
+        android:label="fragment_hospital_detail"
+        tools:layout="@layout/fragment_hospital_detail" >
+        <action
+            android:id="@+id/action_hospitalDetailFragment_to_reservationFragment"
+            app:destination="@id/reservationFragment" />
+        <argument
+            android:name="doctorNo"
+            app:argType="integer" />
+        <argument
+            android:name="doctorName"
+            app:argType="string" />
+        <argument
+            android:name="hospitalName"
+            app:argType="string" />
+        <argument
+            android:name="subject"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="com.hot.pocketdoctor.presentation.treatment.ReservationFragment"
+        android:label="fragment_reservation"
+        tools:layout="@layout/fragment_reservation" >
+        <action
+            android:id="@+id/action_reservationFragment_to_mainActivity2"
+            app:destination="@id/mainActivity2" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.hot.pocketdoctor.presentation.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+
+</navigation>
