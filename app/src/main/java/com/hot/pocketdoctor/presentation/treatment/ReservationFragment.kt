@@ -1,6 +1,8 @@
 package com.hot.pocketdoctor.presentation.treatment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -34,6 +36,7 @@ class ReservationFragment :
 
         setDatePickerButtonClickListener()
         setMakeReservationButtonClickListener()
+        setEditTextWatcher()
     }
 
     private fun setDatePickerButtonClickListener() {
@@ -118,6 +121,53 @@ class ReservationFragment :
         }
     }
 
+    private fun setEditTextWatcher() {
+        with(binding) {
+            etProblem.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable?) {
+
+                    if (s.toString().length <= 200 && s.toString().isNotBlank()) {
+                        tvProblemErrMsg.visibility = View.INVISIBLE
+                        treatmentViewModel.description = s.toString()
+
+                        setEnableReservationButton(true)
+                    } else if (s.toString().isBlank()) {
+                        tvProblemErrMsg.visibility = View.VISIBLE
+                        tvProblemErrMsg.text = "You should write your problem!"
+
+                        setEnableReservationButton(false)
+                    } else if (s.toString().length > 200) {
+                        tvProblemErrMsg.visibility = View.VISIBLE
+                        tvProblemErrMsg.text = "Should less than 200 characters."
+
+                        setEnableReservationButton(false)
+                    }
+                }
+            })
+        }
+    }
+
+    private fun setEnableReservationButton(isEnabled: Boolean) {
+        if (isEnabled) {
+            binding.btnReservation.isEnabled = true
+            binding.btnReservation.setBackgroundResource(R.drawable.button_primary_round_blue)
+            setMakeReservationButtonClickListener()
+        } else {
+            binding.btnReservation.isEnabled = false
+            binding.btnReservation.setBackgroundResource(R.drawable.rectangle_light_gray_radius_20)
+        }
+    }
+
     private fun setMakeReservationButtonClickListener() {
         binding.btnReservation.setOnClickListener {
             postReservationInfo()
@@ -137,6 +187,4 @@ class ReservationFragment :
             Toast.makeText(context, "Error occurred! Please try again.", Toast.LENGTH_LONG).show()
         }
     }
-
-
 }
