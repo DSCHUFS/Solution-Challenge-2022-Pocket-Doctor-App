@@ -46,12 +46,6 @@
         <action
             android:id="@+id/action_reservationFragment_to_mainActivity"
             app:destination="@id/mainActivity" />
-        <argument
-            android:name="doctorNo"
-            app:argType="integer" />
-        <argument
-            android:name="hospitalNo"
-            app:argType="integer" />
     </fragment>
 
     <activity

@@ -22,8 +22,6 @@ class ReservationFragment :
 
     private val treatmentViewModel: TreatmentViewModel by sharedViewModel()
 
-    private val args by navArgs<ReservationFragmentArgs>()
-
     private var currentSelectedDate: Long? = null
 
     private lateinit var calendarDateTime: String
@@ -34,14 +32,8 @@ class ReservationFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setNavigatedArgs()
         setDatePickerButtonClickListener()
         setMakeReservationButtonClickListener()
-    }
-
-    private fun setNavigatedArgs() {
-        treatmentViewModel.hospitalNo = args.hospitalNo
-        treatmentViewModel.doctorNo = args.doctorNo
     }
 
     private fun setDatePickerButtonClickListener() {
@@ -97,7 +89,7 @@ class ReservationFragment :
             .setInputMode(INPUT_MODE_CLOCK)
             .build().apply {
                 addOnPositiveButtonClickListener {
-                    val time = " ${this.hour}:${this.minute}:00 "
+                    val time = " ${this.hour}:${this.minute}:00"
                     calendarDateTime += time
                     Log.e("AAA", calendarDateTime)
 

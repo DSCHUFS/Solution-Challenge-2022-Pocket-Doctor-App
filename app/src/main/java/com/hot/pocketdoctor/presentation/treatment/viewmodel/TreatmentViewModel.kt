@@ -87,7 +87,7 @@ class TreatmentViewModel(
             }
     }
 
-    fun postReservation(doctorNo: Int, hospitalNo: Int) = viewModelScope.launch {
+    fun postReservation() = viewModelScope.launch {
         runCatching {
             reservationRepository.postReservation(
                 ReqReservationSuccessData(
@@ -104,6 +104,7 @@ class TreatmentViewModel(
                 Log.e(RESERVATION_SUCCESS_TAG, "${it.status}-${it.message}")
             }
             .onFailure {
+                _isReservationCompleted.postValue(false)
                 it.printStackTrace()
                 Log.e(RESERVATION_FAILED_TAG, "${it.message}")
             }
