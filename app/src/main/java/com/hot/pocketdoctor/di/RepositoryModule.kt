@@ -2,12 +2,10 @@ package com.hot.pocketdoctor.di
 
 import com.hot.pocketdoctor.data.repository.SignInRepositoryImpl
 import com.hot.pocketdoctor.data.repository.SignUpRepositoryImpl
-import com.hot.pocketdoctor.data.repository.info.DoctorInfoRepositoryImpl
-import com.hot.pocketdoctor.data.repository.info.HospitalInfoRepositoryImpl
-import com.hot.pocketdoctor.domain.repository.DoctorInfoRepository
-import com.hot.pocketdoctor.domain.repository.HospitalInfoRepository
-import com.hot.pocketdoctor.domain.repository.SignInRepository
-import com.hot.pocketdoctor.domain.repository.SignUpRepository
+import com.hot.pocketdoctor.data.repository.treatment.DoctorInfoRepositoryImpl
+import com.hot.pocketdoctor.data.repository.treatment.HospitalInfoRepositoryImpl
+import com.hot.pocketdoctor.data.repository.treatment.ReservationRepositoryImpl
+import com.hot.pocketdoctor.domain.repository.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -15,4 +13,5 @@ val repositoryModule = module {
     single<SignInRepository> { SignInRepositoryImpl(get()) }
     single<DoctorInfoRepository> { DoctorInfoRepositoryImpl(get()) }
     single<HospitalInfoRepository> { HospitalInfoRepositoryImpl(get()) }
+    single<ReservationRepository> { ReservationRepositoryImpl(get()) }
 }

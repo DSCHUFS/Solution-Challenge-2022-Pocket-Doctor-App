@@ -4,10 +4,7 @@ import com.hot.pocketdoctor.data.datasource.login.SignInDataSource
 import com.hot.pocketdoctor.data.datasource.login.SignInDataSourceImpl
 import com.hot.pocketdoctor.data.datasource.signup.SignUpDataSource
 import com.hot.pocketdoctor.data.datasource.signup.SignUpDataSourceImpl
-import com.hot.pocketdoctor.data.datasource.treatment.DoctorInfoDataSource
-import com.hot.pocketdoctor.data.datasource.treatment.DoctorInfoDataSourceImpl
-import com.hot.pocketdoctor.data.datasource.treatment.HospitalInfoDataSource
-import com.hot.pocketdoctor.data.datasource.treatment.HospitalInfoDataSourceImpl
+import com.hot.pocketdoctor.data.datasource.treatment.*
 import org.koin.dsl.module
 
 val dataSourceModule = module {
@@ -15,4 +12,5 @@ val dataSourceModule = module {
     single<SignInDataSource> { SignInDataSourceImpl(get()) }
     single<DoctorInfoDataSource> { DoctorInfoDataSourceImpl(get()) }
     single<HospitalInfoDataSource> { HospitalInfoDataSourceImpl(get()) }
+    single<ReservationDataSource> { ReservationDataSourceImpl(get()) }
 }
