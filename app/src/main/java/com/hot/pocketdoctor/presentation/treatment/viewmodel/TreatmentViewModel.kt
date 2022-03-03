@@ -25,8 +25,12 @@ class TreatmentViewModel(
     private var _doctorInfoData = MutableLiveData<List<DoctorInfoData.DoctorInfo>>()
     val doctorInfoData: LiveData<List<DoctorInfoData.DoctorInfo>> get() = _doctorInfoData
 
-    private var _isReservationCompleted = MutableLiveData<Boolean>()
-    var isReservationCompleted: LiveData<Boolean> = _isReservationCompleted
+    private var _isReservationCompleted: Boolean = true
+    var isReservationCompleted: Boolean = _isReservationCompleted
+        set(value) {
+            _isReservationCompleted = value
+            field = value
+        }
 
     private var _doctorNo: Int = 0
     var doctorNo: Int = _doctorNo
@@ -100,11 +104,11 @@ class TreatmentViewModel(
             )
         }
             .onSuccess {
-                _isReservationCompleted.postValue(true)
+                _isReservationCompleted = true
                 Log.e(RESERVATION_SUCCESS_TAG, "${it.status}-${it.message}")
             }
             .onFailure {
-                _isReservationCompleted.postValue(false)
+                _isReservationCompleted = false
                 it.printStackTrace()
                 Log.e(RESERVATION_FAILED_TAG, "${it.message}")
             }

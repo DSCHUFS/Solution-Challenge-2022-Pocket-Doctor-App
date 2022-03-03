@@ -5,6 +5,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -37,6 +38,7 @@ class ReservationFragment :
         setDatePickerButtonClickListener()
         setMakeReservationButtonClickListener()
         setEditTextWatcher()
+        setRadioButtonClickListener()
     }
 
     private fun setDatePickerButtonClickListener() {
@@ -157,6 +159,15 @@ class ReservationFragment :
         }
     }
 
+    private fun setRadioButtonClickListener() {
+        binding.rgContactType.setOnCheckedChangeListener { _, checkedId ->
+            when(checkedId) {
+                R.id.rb_video -> treatmentViewModel.isVideo = true
+                R.id.rb_voice -> treatmentViewModel.isVideo = false
+            }
+        }
+    }
+
     private fun setEnableReservationButton(isEnabled: Boolean) {
         if (isEnabled) {
             binding.btnReservation.isEnabled = true
@@ -180,7 +191,7 @@ class ReservationFragment :
     }
 
     private fun navigateToMainByStatus() {
-        if (treatmentViewModel.isReservationCompleted.value == true) {
+        if (treatmentViewModel.isReservationCompleted) {
             Toast.makeText(context, "Reservation successfully saved.", Toast.LENGTH_LONG).show()
             navigate(R.id.action_reservationFragment_to_mainActivity)
         } else {
