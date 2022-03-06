@@ -14,6 +14,7 @@ import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.FragmentSignUpEmailNameBinding
 import com.hot.pocketdoctor.presentation.signup.viewmodel.SignUpViewModel
 import com.hot.pocketdoctor.util.navigate
+import com.hot.pocketdoctor.util.navigateWithData
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
@@ -100,7 +101,7 @@ class SignUpEmailNameFragment : Fragment() {
             }
 
             tvVerifyEmail.setOnClickListener {
-                navigate(R.id.action_signUpEmailNameFragment_to_verifyEmailFragment)
+                navigateWithData(SignUpEmailNameFragmentDirections.actionSignUpEmailNameFragmentToVerifyEmailFragment(binding.etEmail.text.toString()))
             }
         }
 

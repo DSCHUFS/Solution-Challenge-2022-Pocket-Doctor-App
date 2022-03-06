@@ -55,6 +55,9 @@ class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewMode
             }
     }
 
+    fun postVerifyEmail() = viewModelScope.launch {
+        runCatching {  }
+    }
 
     companion object {
         const val SIGNUP_SUCCESS_TAG = "postSignUp-Success"
