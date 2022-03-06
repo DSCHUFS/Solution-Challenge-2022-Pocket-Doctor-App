@@ -1,5 +1,6 @@
 package com.hot.pocketdoctor.presentation.medication
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,6 +18,7 @@ import com.hot.pocketdoctor.presentation.medication.MedicationRegisterActivity
 
 class MedicationInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMedicationInfoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMedicationInfoBinding.inflate(layoutInflater)
