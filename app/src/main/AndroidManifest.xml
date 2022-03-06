@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hot.pocketdoctor">
+    package="com.hot.pocketdoctor" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:name=".PocketDoctorApplication"
@@ -15,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketDoctor"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".presentation.treatment.TreatmentActivity"
+            android:exported="true" />
         <activity
             android:name=".presentation.login.findpassword.ChangePasswordActivity"
             android:exported="true" />
@@ -38,23 +39,11 @@
             android:name=".presentation.signup.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".presentation.reservation.ReservationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.hospitaldetail.HospitalDetailActivity"
-            android:exported="true" />
-        <activity
             android:name=".presentation.medication.MedicationRegisterActivity"
             android:exported="true" />
         <activity
             android:name=".presentation.medication.MedicationInfoActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".presentation.mypage.settings.NoticeActivity"
             android:exported="true" />
@@ -71,19 +60,17 @@
             android:name=".presentation.search.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".presentation.treatment.TreatmentListActivity"
-            android:exported="true" />
-        <activity
             android:name=".presentation.SplashActivity"
-            android:exported="true">
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true" />
-
-        <receiver android:name=".presentation.medication.AlarmReceiver" />
-
     </application>
 
 </manifest>

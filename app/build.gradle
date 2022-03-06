@@ -2,7 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -34,20 +35,11 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-messaging:20.1.0'
-
-
-    //ROOM
-    def roomVersion = "2.4.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
-    kapt("androidx.room:room-compiler:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
-
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -84,17 +76,17 @@ dependencies {
     kapt("androidx.room:room-compiler:2.4.1")
 
     // Jetpack - LifeCycle, ViewModel, LiveData
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1"
 
     // Jetpack - Fragment
     implementation "androidx.fragment:fragment-ktx:1.4.1"
 
     // Jetpack - Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:2.4.0"
-    implementation "androidx.navigation:navigation-ui-ktx:2.4.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
 
     // Test
     testImplementation 'junit:junit:4.+'

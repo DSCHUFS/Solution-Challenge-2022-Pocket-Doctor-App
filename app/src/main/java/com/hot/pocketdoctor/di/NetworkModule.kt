@@ -1,6 +1,7 @@
 package com.hot.pocketdoctor.di
 
 import com.google.gson.GsonBuilder
+import com.hot.pocketdoctor.data.api.TreatmentService
 import com.hot.pocketdoctor.data.api.UserAuthService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -32,11 +33,15 @@ val networkModule = module {
                     GsonBuilder().setLenient().create()
                 )
             )
-            .baseUrl("https://11.11.11.11")  // BaseUrl 확인
+            .baseUrl("http://ec2-3-38-63-80.ap-northeast-2.compute.amazonaws.com:3000")  // BaseUrl 확인
             .build()
     }
 
     single<UserAuthService> {
         get<Retrofit>().create(UserAuthService::class.java)
+    }
+
+    single<TreatmentService> {
+        get<Retrofit>().create(TreatmentService::class.java)
     }
 }

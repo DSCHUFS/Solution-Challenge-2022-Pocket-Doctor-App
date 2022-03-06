@@ -34,4 +34,26 @@
         <item name="android:textColor">@color/primary_second_blue</item>
     </style>
 
+    <style name="MaterialCalendarTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <!-- Header panel -->
+        <item name="materialCalendarHeaderLayout">@style/MaterialCalendar.HeaderLayout1</item>
+        <!-- Buttons -->
+        <item name="buttonBarPositiveButtonStyle">@style/TextButton.Dialog1</item>
+        <item name="buttonBarNegativeButtonStyle">@style/TextButton.Dialog1</item>
+        <item name="daySelectedStyle">@style/MaterialCalendar.SelectedDate</item>
+    </style>
+    <style name="MaterialCalendar.HeaderLayout1" parent="Widget.MaterialComponents.MaterialCalendar.HeaderLayout">
+
+        <item name="android:background">@color/background_white</item>
+    </style>
+    <style name="TextButton.Dialog1" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/primary_second_blue</item>
+    </style>
+    <style name="MaterialCalendar.SelectedDate" parent="Widget.MaterialComponents.MaterialCalendar.Day.Selected">
+        <item name="itemFillColor">@android:color/transparent</item>
+        <item name="itemTextColor">@color/primary_text_black</item>
+        <item name="itemStrokeColor">@color/primary_second_blue</item>
+        <item name="itemStrokeWidth">1dp</item>
+    </style>
+
 </resources>
