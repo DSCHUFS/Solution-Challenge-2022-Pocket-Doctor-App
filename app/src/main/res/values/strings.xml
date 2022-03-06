@@ -162,6 +162,13 @@
     <string name="friday">Fri</string>
     <string name="saturday">Sat</string>
     <string name="sunday">Sun</string>
+    <string name="verify_email">Verify my account</string>
+    <string name="verify_email_title">Verify My Account</string>
+    <string name="verify_email_notice">We sent a verification code to your E-Mail.\nPlease enter your verification code.</string>
+    <string name="verification_code_again"><u>I don\'t get verification code.</u></string>
+    <string name="verification_code">Verification Code</string>
+    <string name="code_err_message">Please check again. (Not Correct)</string>
+    <string name="verify_account">Verify Account</string>
 
 
 </resources>

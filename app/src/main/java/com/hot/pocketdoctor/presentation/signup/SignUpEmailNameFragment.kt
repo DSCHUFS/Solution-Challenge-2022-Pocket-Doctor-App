@@ -92,11 +92,18 @@ class SignUpEmailNameFragment : Fragment() {
     }
 
     private fun setButtonClickListener() {
-        binding.btnNext.setOnClickListener {
-            signUpViewModel.email = binding.etEmail.text.toString().trim()
-            signUpViewModel.name = binding.etName.text.toString().trim()
-            navigate(R.id.action_signUpEmailNameFragment_to_signUpPasswordFragment)
+        with(binding) {
+            btnNext.setOnClickListener {
+                signUpViewModel.email = binding.etEmail.text.toString().trim()
+                signUpViewModel.name = binding.etName.text.toString().trim()
+                navigate(R.id.action_signUpEmailNameFragment_to_signUpPasswordFragment)
+            }
+
+            tvVerifyEmail.setOnClickListener {
+                navigate(R.id.action_signUpEmailNameFragment_to_verifyEmailFragment)
+            }
         }
+
     }
 
     override fun onDestroyView() {
