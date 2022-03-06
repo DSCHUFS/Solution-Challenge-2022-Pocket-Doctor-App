@@ -169,6 +169,7 @@
     <string name="verification_code">Verification Code</string>
     <string name="code_err_message">Please check again. (Not Correct)</string>
     <string name="verify_account">Verify Account</string>
+    <string name="verify_email_success">Verify Email Success</string>
 
 
 </resources>

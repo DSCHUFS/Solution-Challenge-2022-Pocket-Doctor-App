@@ -61,6 +61,7 @@
         android:textAllCaps="false"
         android:textColor="@color/primary_second_blue"
         android:textSize="14sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@id/tv_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_email" />

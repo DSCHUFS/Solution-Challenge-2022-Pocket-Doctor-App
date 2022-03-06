@@ -56,10 +56,12 @@ class SignUpEmailNameFragment : Fragment() {
 
                 with(binding.tvMessageCheckEmail) {
                     if (android.util.Patterns.EMAIL_ADDRESS.matcher(s.toString().trim()).matches()) {
-                        // TODO : 중복 계정 확인?
-
-                        text = "Cool!"
+                        text = "Cool! Please verify your Email"
                         setTextColor(resources.getColor(R.color.primary_second_blue, context?.theme))
+
+                        enableVerifyTextView()
+
+
                     } else {
                         text = "Please Check Your Email Format"
                         setTextColor(resources.getColor(R.color.accent_red, context?.theme))
@@ -77,6 +79,12 @@ class SignUpEmailNameFragment : Fragment() {
                 checkEmptyField()
             }
         })
+    }
+
+    private fun enableVerifyTextView() {
+        with(binding) {
+            tvVerifyEmail.visibility = View.VISIBLE
+        }
     }
 
 
@@ -101,7 +109,8 @@ class SignUpEmailNameFragment : Fragment() {
             }
 
             tvVerifyEmail.setOnClickListener {
-                navigateWithData(SignUpEmailNameFragmentDirections.actionSignUpEmailNameFragmentToVerifyEmailFragment(binding.etEmail.text.toString()))
+                signUpViewModel.postVerifyEmail(binding.etEmail.text.toString().trim())
+                navigate(R.id.action_signUpEmailNameFragment_to_verifyEmailFragment)
             }
         }
 

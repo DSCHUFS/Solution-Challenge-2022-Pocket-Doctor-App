@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hot.pocketdoctor.data.model.request.signup.ReqSignUpSuccessData
+import com.hot.pocketdoctor.data.model.request.signup.ReqVerifyEmailSuccessData
 import com.hot.pocketdoctor.domain.repository.SignUpRepository
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -14,6 +15,9 @@ class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewMode
 
     private var _isSignUpSuccess = MutableLiveData<Boolean>()
     var isSignUpSuccess: LiveData<Boolean> = _isSignUpSuccess
+
+    private var _verificationCode = MutableLiveData<String>()
+    var verificationCode: LiveData<String> = _verificationCode
 
     private var _email: String = ""
     var email: String = _email
@@ -55,12 +59,21 @@ class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewMode
             }
     }
 
-    fun postVerifyEmail() = viewModelScope.launch {
-        runCatching {  }
+    fun postVerifyEmail(email: String) = viewModelScope.launch {
+        runCatching { signUpRepository.postVerifyEmail(ReqVerifyEmailSuccessData(email)) }
+            .onSuccess {
+                Log.e(VERIFY_EMAIL_SUCCESS_TAG, "${it.verificationCode}")
+                _verificationCode.postValue(it.verificationCode.toString())
+            }
+            .onFailure {
+                Log.e(VERIFY_EMAIL_FAILED_TAG, "Verify Failed")
+            }
     }
 
     companion object {
         const val SIGNUP_SUCCESS_TAG = "postSignUp-Success"
         const val SIGNUP_FAILED_TAG = "postSignUp-Failed"
+        const val VERIFY_EMAIL_SUCCESS_TAG = "postVerifyEmail-Success"
+        const val VERIFY_EMAIL_FAILED_TAG = "postVerifyEmail-Failed"
     }
 }
