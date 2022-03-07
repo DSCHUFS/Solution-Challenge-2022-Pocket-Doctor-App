@@ -1,10 +1,10 @@
-package com.hot.pocketdoctor.data.datasource.signup
+package com.hot.pocketdoctor.data.datasource.user.signup
 
 import com.hot.pocketdoctor.data.api.UserAuthService
 import com.hot.pocketdoctor.data.model.request.signup.ReqSignUpSuccessData
 import com.hot.pocketdoctor.data.model.request.signup.ReqVerifyEmailSuccessData
-import com.hot.pocketdoctor.data.model.response.signup.ResSignUpSuccessData
-import com.hot.pocketdoctor.data.model.response.signup.ResVerifyEmailSuccessData
+import com.hot.pocketdoctor.data.model.response.user.signup.ResSignUpSuccessData
+import com.hot.pocketdoctor.data.model.response.user.signup.ResVerifyEmailSuccessData
 
 class SignUpDataSourceImpl(val userAuthService: UserAuthService) : SignUpDataSource {
 

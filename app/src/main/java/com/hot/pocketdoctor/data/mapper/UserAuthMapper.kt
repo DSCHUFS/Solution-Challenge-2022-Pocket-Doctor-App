@@ -1,10 +1,12 @@
 package com.hot.pocketdoctor.data.mapper
 
-import com.hot.pocketdoctor.data.model.response.signin.ResSignInSuccessData
-import com.hot.pocketdoctor.data.model.response.signup.ResSignUpSuccessData
-import com.hot.pocketdoctor.data.model.response.signup.ResVerifyEmailSuccessData
+import com.hot.pocketdoctor.data.model.response.user.ResUserInfoSuccessData
+import com.hot.pocketdoctor.data.model.response.user.signin.ResSignInSuccessData
+import com.hot.pocketdoctor.data.model.response.user.signup.ResSignUpSuccessData
+import com.hot.pocketdoctor.data.model.response.user.signup.ResVerifyEmailSuccessData
 import com.hot.pocketdoctor.domain.model.SignInData
 import com.hot.pocketdoctor.domain.model.SignUpData
+import com.hot.pocketdoctor.domain.model.UserInfoData
 import com.hot.pocketdoctor.domain.model.VerifyEmailData
 
 object UserAuthMapper {
@@ -28,6 +30,14 @@ object UserAuthMapper {
         return VerifyEmailData(
             verificationCode = resVerifyEmailSuccessData.verificationCode,
             verifiedEmail = resVerifyEmailSuccessData.verifiedEmail
+        )
+    }
+
+    fun mapperToUserInfoData(resUserInfoSuccessData: ResUserInfoSuccessData) : UserInfoData {
+        return UserInfoData(
+            userEmail = resUserInfoSuccessData.userEmail,
+            userName = resUserInfoSuccessData.userName,
+            userPhoneNum = resUserInfoSuccessData.userPhoneNum
         )
     }
 }
