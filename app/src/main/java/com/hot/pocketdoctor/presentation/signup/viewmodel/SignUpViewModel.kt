@@ -19,6 +19,9 @@ class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewMode
     private var _verificationCode = MutableLiveData<String>()
     var verificationCode: LiveData<String> = _verificationCode
 
+    private var _verifiedEmail = MutableLiveData<String>()
+    var verifiedEmail: LiveData<String> = _verifiedEmail
+
     private var _email: String = ""
     var email: String = _email
         set(value) {
@@ -64,6 +67,7 @@ class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewMode
             .onSuccess {
                 Log.e(VERIFY_EMAIL_SUCCESS_TAG, "${it.verificationCode}")
                 _verificationCode.postValue(it.verificationCode.toString())
+                _verifiedEmail.postValue(it.verifiedEmail)
             }
             .onFailure {
                 Log.e(VERIFY_EMAIL_FAILED_TAG, "Verify Failed")

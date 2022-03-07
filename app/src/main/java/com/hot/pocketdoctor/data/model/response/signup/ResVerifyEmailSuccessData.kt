@@ -6,6 +6,9 @@ data class ResVerifyEmailSuccessData(
     @SerializedName("auth_num")
     val verificationCode: Int,
 
+    @SerializedName("email")
+    val verifiedEmail: String,
+
     @SerializedName("message")
     val message: String,
 

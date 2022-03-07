@@ -26,7 +26,8 @@ object UserAuthMapper {
 
     fun mapperToVerifyEmailResultData(resVerifyEmailSuccessData: ResVerifyEmailSuccessData): VerifyEmailData {
         return VerifyEmailData(
-            verificationCode = resVerifyEmailSuccessData.verificationCode
+            verificationCode = resVerifyEmailSuccessData.verificationCode,
+            verifiedEmail = resVerifyEmailSuccessData.verifiedEmail
         )
     }
 }

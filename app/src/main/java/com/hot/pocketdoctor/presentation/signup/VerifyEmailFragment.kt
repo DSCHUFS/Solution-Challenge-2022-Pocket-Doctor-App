@@ -3,7 +3,6 @@ package com.hot.pocketdoctor.presentation.signup
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -11,7 +10,7 @@ import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.FragmentVerifyEmailBinding
 import com.hot.pocketdoctor.presentation.base.BaseFragment
 import com.hot.pocketdoctor.presentation.signup.viewmodel.SignUpViewModel
-import com.hot.pocketdoctor.util.navigate
+import com.hot.pocketdoctor.util.navigateWithData
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class VerifyEmailFragment :
@@ -20,11 +19,13 @@ class VerifyEmailFragment :
     private val signUpViewModel: SignUpViewModel by sharedViewModel()
 
     private lateinit var verificationCode: String
+    private lateinit var verifiedEmail: String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         observeVerificationCode()
+        observeVerifiedEmail()
         setButtonClickListener()
         setEditTextWatcher()
     }
@@ -32,6 +33,12 @@ class VerifyEmailFragment :
     private fun observeVerificationCode() {
         signUpViewModel.verificationCode.observe(viewLifecycleOwner, {
             verificationCode = it
+        })
+    }
+
+    private fun observeVerifiedEmail() {
+        signUpViewModel.verifiedEmail.observe(viewLifecycleOwner, {
+            verifiedEmail = it
         })
     }
 
@@ -54,6 +61,7 @@ class VerifyEmailFragment :
     private fun checkVerificationCode() {
         with(binding) {
             if (etCode.text.toString() == verificationCode) {
+
                 tvCodeMessage.visibility = View.VISIBLE
                 tvCodeMessage.text = resources.getString(R.string.verify_email_success)
                 tvCodeMessage.setTextColor(
@@ -83,13 +91,12 @@ class VerifyEmailFragment :
     private fun setButtonClickListener() {
         with(binding) {
             btnVerify.setOnClickListener {
-                navigate(R.id.action_verifyEmailFragment_to_signUpEmailNameFragment)
+                navigateWithData(VerifyEmailFragmentDirections.actionVerifyEmailFragmentToSignUpEmailNameFragment(verifiedEmail, true))
             }
 
             tvCodeAgain.setOnClickListener {
                 Toast.makeText(context, "CodeAgain", Toast.LENGTH_LONG).show()
             }
         }
-
     }
 }

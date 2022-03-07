@@ -15,6 +15,14 @@
         <action
             android:id="@+id/action_signUpEmailNameFragment_to_verifyEmailFragment"
             app:destination="@id/verifyEmailFragment" />
+        <argument
+            android:name="verifiedEmail"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="isVerified"
+            app:argType="boolean"
+            android:defaultValue="false"/>
     </fragment>
     <fragment
         android:id="@+id/verifyEmailFragment"
@@ -25,7 +33,9 @@
             android:id="@+id/action_verifyEmailFragment_to_signUpEmailNameFragment"
             app:destination="@id/signUpEmailNameFragment"
             app:popUpTo="@id/signUpEmailNameFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true" >
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/signUpPasswordFragment"

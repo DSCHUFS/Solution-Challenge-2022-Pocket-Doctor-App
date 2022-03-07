@@ -4,17 +4,17 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
 import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.FragmentSignUpEmailNameBinding
 import com.hot.pocketdoctor.presentation.signup.viewmodel.SignUpViewModel
 import com.hot.pocketdoctor.util.navigate
-import com.hot.pocketdoctor.util.navigateWithData
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
@@ -23,19 +23,33 @@ class SignUpEmailNameFragment : Fragment() {
     private var _binding: FragmentSignUpEmailNameBinding? = null
     private val binding get() = _binding!!
     private val signUpViewModel: SignUpViewModel by sharedViewModel()
+    private val args by navArgs<SignUpEmailNameFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.e("Frag", "OnCreateView")
         _binding = FragmentSignUpEmailNameBinding.inflate(inflater, container, false)
 
+        setNavArgs()
         textWatcherEditText()
         setButtonClickListener()
 
-
         val view = binding.root
         return view
+    }
+
+    private fun setNavArgs() {
+        val email = args.verifiedEmail
+        val isVerified = args.isVerified
+        if (isVerified) {
+            setVerifiedEmail(email)
+        }
+    }
+
+    private fun setVerifiedEmail(verifiedEmail: String) {
+        binding.etEmail.text = Editable.Factory.getInstance().newEditable(verifiedEmail)
     }
 
     private fun textWatcherEditText() {
@@ -60,8 +74,6 @@ class SignUpEmailNameFragment : Fragment() {
                         setTextColor(resources.getColor(R.color.primary_second_blue, context?.theme))
 
                         enableVerifyTextView()
-
-
                     } else {
                         text = "Please Check Your Email Format"
                         setTextColor(resources.getColor(R.color.accent_red, context?.theme))
@@ -87,7 +99,6 @@ class SignUpEmailNameFragment : Fragment() {
         }
     }
 
-
     private fun checkEmptyField() {
         if (binding.etEmail.text.isNullOrBlank() || binding.etName.text.isNullOrBlank()) {
             binding.btnNext.isEnabled = false
@@ -103,12 +114,12 @@ class SignUpEmailNameFragment : Fragment() {
     private fun setButtonClickListener() {
         with(binding) {
             btnNext.setOnClickListener {
-                signUpViewModel.email = binding.etEmail.text.toString().trim()
                 signUpViewModel.name = binding.etName.text.toString().trim()
                 navigate(R.id.action_signUpEmailNameFragment_to_signUpPasswordFragment)
             }
 
             tvVerifyEmail.setOnClickListener {
+                signUpViewModel.email = binding.etEmail.text.toString().trim()
                 signUpViewModel.postVerifyEmail(binding.etEmail.text.toString().trim())
                 navigate(R.id.action_signUpEmailNameFragment_to_verifyEmailFragment)
             }
