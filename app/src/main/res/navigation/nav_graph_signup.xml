@@ -12,6 +12,30 @@
         <action
             android:id="@+id/action_signUpEmailNameFragment_to_signUpPasswordFragment"
             app:destination="@id/signUpPasswordFragment" />
+        <action
+            android:id="@+id/action_signUpEmailNameFragment_to_verifyEmailFragment"
+            app:destination="@id/verifyEmailFragment" />
+        <argument
+            android:name="verifiedEmail"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="isVerified"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/verifyEmailFragment"
+        android:name="com.hot.pocketdoctor.presentation.signup.VerifyEmailFragment"
+        android:label="fragment_verify_email"
+        tools:layout="@layout/fragment_verify_email" >
+        <action
+            android:id="@+id/action_verifyEmailFragment_to_signUpEmailNameFragment"
+            app:destination="@id/signUpEmailNameFragment"
+            app:popUpTo="@id/signUpEmailNameFragment"
+            app:popUpToInclusive="true" >
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/signUpPasswordFragment"
@@ -36,4 +60,5 @@
         android:name="com.hot.pocketdoctor.presentation.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
+
 </navigation>

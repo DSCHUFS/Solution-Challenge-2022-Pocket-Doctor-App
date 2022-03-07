@@ -52,6 +52,20 @@
         app:layout_constraintStart_toStartOf="@id/pb_signup_indicator"
         app:layout_constraintTop_toBottomOf="@id/pb_signup_indicator" />
 
+    <TextView
+        android:id="@+id/tv_verify_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/verify_email"
+        android:textAllCaps="false"
+        android:textColor="@color/primary_second_blue"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tv_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_email" />
+
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
@@ -74,14 +88,14 @@
         android:id="@+id/tv_message_check_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="20dp"
-        android:textColor="@color/accent_red"
         android:text="@string/signup_message_check_email"
-        android:visibility="invisible" />
+        android:textColor="@color/accent_red"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email" />
 
     <TextView
         android:id="@+id/tv_name"

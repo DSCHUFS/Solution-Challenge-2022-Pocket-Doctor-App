@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.signup.VerifyEmailFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/BaseTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/verify_email_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_signup_indicator"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:max="90"
+            android:progress="30"
+            android:progressBackgroundTint="@color/hint_gray"
+            android:progressTint="@color/primary_second_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_title" />
+
+        <TextView
+            android:id="@+id/tv_verify_email_notice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="start"
+            android:text="@string/verify_email_notice"
+            android:textColor="@color/text_body_dark_gray"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/pb_signup_indicator"
+            app:layout_constraintTop_toBottomOf="@id/pb_signup_indicator" />
+
+        <TextView
+            android:id="@+id/tv_code_title"
+            style="@style/BaseSubtitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/verification_code"
+            app:layout_constraintStart_toStartOf="@id/tv_verify_email_notice"
+            app:layout_constraintTop_toBottomOf="@id/tv_verify_email_notice" />
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="number"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_code_title" />
+
+        <TextView
+            android:id="@+id/tv_code_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/code_err_message"
+            android:textColor="@color/accent_red"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/et_code"
+            app:layout_constraintStart_toStartOf="@id/et_code"
+            app:layout_constraintTop_toBottomOf="@id/et_code" />
+
+        <TextView
+            android:id="@+id/tv_code_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/verification_code_again"
+            android:textColor="@color/hint_gray"
+            app:layout_constraintBottom_toTopOf="@id/btn_verify"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/rectangle_light_gray_radius_20"
+            android:gravity="center"
+            android:text="@string/verify_account"
+            android:textAllCaps="false"
+            android:textColor="@color/background_white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
