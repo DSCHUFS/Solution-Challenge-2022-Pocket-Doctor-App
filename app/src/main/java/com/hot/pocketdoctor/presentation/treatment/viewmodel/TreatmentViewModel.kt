@@ -121,6 +121,5 @@ class TreatmentViewModel(
         const val DOCTOR_FAILED_TAG = "QueryDoctorInfo_Failed"
         const val RESERVATION_SUCCESS_TAG = "PostReservation_Success"
         const val RESERVATION_FAILED_TAG = "PostReservation_Failed"
-
     }
 }

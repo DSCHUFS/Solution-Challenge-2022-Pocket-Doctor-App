@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.hot.pocketdoctor.databinding.ActivityLoginBinding
-import com.hot.pocketdoctor.presentation.MainActivity
 import com.hot.pocketdoctor.presentation.login.findaccount.FindAccountActivity
 import com.hot.pocketdoctor.presentation.login.findpassword.FindPasswordActivity
+import com.hot.pocketdoctor.presentation.main.MainActivity
 import com.hot.pocketdoctor.presentation.login.viewmodel.SignInViewModel
 import com.hot.pocketdoctor.presentation.signup.SignUpActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel

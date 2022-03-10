@@ -1,5 +1,6 @@
 package com.hot.pocketdoctor.presentation.treatment.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,7 +11,7 @@ import com.hot.pocketdoctor.domain.model.treatment.DoctorInfoData
 import com.hot.pocketdoctor.presentation.treatment.TreatmentListFragmentDirections
 import com.hot.pocketdoctor.util.navigateWithData
 
-class DoctorListAdapter :
+class DoctorListAdapter(val context: Context) :
     ListAdapter<DoctorInfoData.DoctorInfo, DoctorListAdapter.DoctorListViewHolder>(DiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoctorListViewHolder {
         val binding =

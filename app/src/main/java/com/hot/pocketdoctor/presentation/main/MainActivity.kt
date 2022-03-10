@@ -1,4 +1,4 @@
-package com.hot.pocketdoctor.presentation
+package com.hot.pocketdoctor.presentation.main
 
 import android.content.Intent
 import android.content.pm.PackageManager
