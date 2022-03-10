@@ -2,6 +2,7 @@ package com.hot.pocketdoctor.di
 
 import com.hot.pocketdoctor.data.repository.SignInRepositoryImpl
 import com.hot.pocketdoctor.data.repository.SignUpRepositoryImpl
+import com.hot.pocketdoctor.data.repository.UserInfoRepositoryImpl
 import com.hot.pocketdoctor.data.repository.treatment.DoctorInfoRepositoryImpl
 import com.hot.pocketdoctor.data.repository.treatment.HospitalInfoRepositoryImpl
 import com.hot.pocketdoctor.data.repository.treatment.ReservationRepositoryImpl
@@ -14,4 +15,5 @@ val repositoryModule = module {
     single<DoctorInfoRepository> { DoctorInfoRepositoryImpl(get()) }
     single<HospitalInfoRepository> { HospitalInfoRepositoryImpl(get()) }
     single<ReservationRepository> { ReservationRepositoryImpl(get()) }
+    single<UserInfoRepository> { UserInfoRepositoryImpl(get()) }
 }

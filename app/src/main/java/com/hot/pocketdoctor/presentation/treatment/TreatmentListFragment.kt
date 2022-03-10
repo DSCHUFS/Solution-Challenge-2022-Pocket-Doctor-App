@@ -16,7 +16,7 @@ class TreatmentListFragment :
 
     private val treatmentViewModel: TreatmentViewModel by sharedViewModel()
 
-    private val doctorListAdapter by lazy { DoctorListAdapter() }
+    private val doctorListAdapter by lazy { DoctorListAdapter(requireActivity()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

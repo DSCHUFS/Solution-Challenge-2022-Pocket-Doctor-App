@@ -1,6 +1,6 @@
 package com.hot.pocketdoctor.data.repository
 
-import com.hot.pocketdoctor.data.datasource.signup.SignUpDataSource
+import com.hot.pocketdoctor.data.datasource.user.signup.SignUpDataSource
 import com.hot.pocketdoctor.data.mapper.UserAuthMapper
 import com.hot.pocketdoctor.data.model.request.signup.ReqSignUpSuccessData
 import com.hot.pocketdoctor.data.model.request.signup.ReqVerifyEmailSuccessData

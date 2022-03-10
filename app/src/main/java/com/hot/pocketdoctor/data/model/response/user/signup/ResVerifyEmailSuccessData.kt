@@ -1,4 +1,4 @@
-package com.hot.pocketdoctor.data.model.response.signup
+package com.hot.pocketdoctor.data.model.response.user.signup
 
 import com.google.gson.annotations.SerializedName
 

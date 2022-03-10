@@ -50,7 +50,7 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.hot.pocketdoctor.presentation.MainActivity"
+        android:name="com.hot.pocketdoctor.presentation.main.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 
