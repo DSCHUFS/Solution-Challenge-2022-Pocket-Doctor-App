@@ -21,7 +21,9 @@ import retrofit2.Callback
 class ReportsFragment : Fragment() {
 
     private var _binding : FragmentReportsBinding? = null
+
     private val binding get() = _binding!!
+    var reportList = listOf<ReportsList.Report>()
 
     //get 한 json 에서 추출한 userName
     var userName : String? = null
@@ -30,19 +32,24 @@ class ReportsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        _binding = FragmentReportsBinding.inflate(inflater, container, false)
 
         loadReports()
 
+        _binding = FragmentReportsBinding.inflate(inflater, container, false)
+
+        binding.ReportRecyclerview.layoutManager = LinearLayoutManager(this.activity)
+
         return binding.root
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val reports = loadReportData()
-        val reportRecyclerAdapter = ReportRecyclerAdapter(reports)
-        binding.ReportRecyclerview.adapter = reportRecyclerAdapter
-        binding.ReportRecyclerview.layoutManager = LinearLayoutManager(this.activity)
+
         binding.iconMedicine.setOnClickListener {
             Toast.makeText(this.activity,"click",Toast.LENGTH_SHORT).show()
             val nextIntent = Intent(this.activity, MedicationInfoActivity::class.java)
@@ -50,21 +57,19 @@ class ReportsFragment : Fragment() {
         }
         //아이템 클릭리스너
         val intent = Intent(this.context,ReportsDetailActivity::class.java)
-        reportRecyclerAdapter.setOnItemclickListner(object: ReportRecyclerAdapter.OnItemClickListner{
+        ReportRecyclerAdapter(reportList).setOnItemClickListener(object: ReportRecyclerAdapter.OnItemClickListener{
             override fun onItemClick(view: View, position: Int) {
                 intent.putExtra("clickedReport_username",userName)
-                intent.putExtra("clickedReport_doctor", reports[position].doctor)
-                intent.putExtra("clickedReport_hospital", reports[position].hospital)
-                intent.putExtra("clickedReport_reportTime", reports[position].reportTime)
-                intent.putExtra("clickedReport_symptom", reports[position].symptom)
+                intent.putExtra("clickedReport_doctor", reportList[position].doctor)
+                intent.putExtra("clickedReport_hospital", reportList[position].hospital)
+                intent.putExtra("clickedReport_reportTime", reportList[position].reportTime)
+                intent.putExtra("clickedReport_symptom", reportList[position].symptom)
                 startActivity(intent)
             }
         })
     }
-    private fun loadReports(){
-        val reportList = mutableListOf<Reports>()
-        //val call: Call<ReportsResponseDTO> = RetrofitClient.instance.getReports()
-        //    call.enqueue(object : retrofit2.Callback<ReportsResponseDTO>{
+    private fun loadReports() {
+
         RetrofitClient.instance.getReports().enqueue(object : Callback<ReportsResponseDTO> {
             override fun onResponse(
                     call: Call<ReportsResponseDTO>, response: Response<ReportsResponseDTO>) {
@@ -72,21 +77,14 @@ class ReportsFragment : Fragment() {
                         if(response.code() == 200){
 
                             val getReportData : ReportsResponseDTO? = response.body()
-                            val reportDataList = getReportData?.reports
 
-                            if(reportDataList?.isNotEmpty() == true) {
-                                for (i in 1..reportDataList.size) {
-                                    val report = reportDataList[i]
-                                    userName = report.userName
-                                    val receivedDoctorName: String = report.doctorName
-                                    val receivedHospitalName = report.hospitalName
-                                    val receivedReportTime = report.reportTime
-                                    val receivedDescription = report.description
-
-                                    val receivedReport = Reports(receivedDoctorName, receivedReportTime, receivedDescription, receivedHospitalName)
-                                    reportList.add(receivedReport)
+                            getReportData?.let{
+                                if(!it.reports.isNullOrEmpty()) {
+                                    userName = it.reports[0].userName
+                                    reportList = setReport(it.reports).reports //List<ReportData>?
                                 }
                             }
+                            binding.ReportRecyclerview.adapter = ReportRecyclerAdapter(reportList)
                         }
                     }
                 }
@@ -96,31 +94,34 @@ class ReportsFragment : Fragment() {
             }
         )
     }
-    private fun loadReportData() : MutableList<Reports> {
-        val reportList = mutableListOf<Reports>()
-        for(i in 1..10){
-            val doctor = "이재성 의사 ${i}"
-            val reportTime = "2022.01.10 (월) 17:38"
-            val symptom = "다 때려 부수고 싶어요"
-            val hospital = "더푸른 의원"
-            val report = Reports(doctor, reportTime, symptom, hospital)
-            reportList.add(report)
-        }
-        return reportList
+
+    private fun setReport(report: List<ReportsResponseDTO.ReportData>): ReportsList { //통신된 리스트
+        //리스트의 요소를 mapping
+        return ReportsList(
+            reports = report.map {
+                ReportsList.Report(
+                    doctor = it.doctorName,
+                    reportTime = it.reportTime,
+                    symptom = it.description,
+                    hospital = it.hospitalName,
+                )
+            }
+        )
+
     }
 }
-class ReportRecyclerAdapter(val reportData: MutableList<Reports>) : RecyclerView.Adapter<ReportRecyclerAdapter.Holder>() {
+class ReportRecyclerAdapter(private val reportData: List<ReportsList.Report>) : RecyclerView.Adapter<ReportRecyclerAdapter.Holder>() {
     //커스텀 리스너 인터페이스 정의
-    interface OnItemClickListner{
+    interface OnItemClickListener {
         fun onItemClick(view: View, position: Int)
     }
     //리스너 인터페이스 객체를 전달하는 메서드 선언
-    fun setOnItemclickListner(onItemClickListner: OnItemClickListner){
-        itemClickListner = onItemClickListner
+    fun setOnItemClickListener(onItemClickListener: OnItemClickListener){
+        itemClickListener = onItemClickListener
     }
 
     //전달된 객체를 저장할 변수 정의
-    private lateinit var itemClickListner: OnItemClickListner
+    private lateinit var itemClickListener: OnItemClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int ): ReportRecyclerAdapter.Holder {
         val binding = ItemReportsRecyclerBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -137,12 +138,12 @@ class ReportRecyclerAdapter(val reportData: MutableList<Reports>) : RecyclerView
             binding.cardView.setOnClickListener {
 
                 val pos = adapterPosition
-                if(pos != RecyclerView.NO_POSITION && itemClickListner != null){
-                    itemClickListner.onItemClick(binding.cardView,pos)
+                if(pos != RecyclerView.NO_POSITION){
+                    itemClickListener.onItemClick(binding.cardView,pos)
                 }
             }
         }
-        fun setReport(report: Reports){
+        fun setReport(report: ReportsList.Report){
             with(binding){
                 idReportsDoctor.text = report.doctor
                 idReportsDate.text = report.reportTime
