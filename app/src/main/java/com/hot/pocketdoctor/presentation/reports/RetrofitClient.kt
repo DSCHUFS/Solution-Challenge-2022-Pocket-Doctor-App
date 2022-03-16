@@ -23,7 +23,6 @@ object RetrofitClient {
             .build()
     }
 
-
     val instance : RetroService by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)

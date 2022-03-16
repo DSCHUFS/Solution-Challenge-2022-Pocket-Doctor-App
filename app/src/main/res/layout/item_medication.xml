@@ -26,7 +26,7 @@
             android:clickable="false"
             android:text="주 3회 12:00 18:00"
             android:textColor="@color/text_body_dark_gray"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/id_medication_name"
@@ -45,7 +45,7 @@
             android:layout_marginTop="90dp"
             android:text="항생제"
             android:textColor="@color/primary_text_black"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="normal" />
 
     </androidx.cardview.widget.CardView>
