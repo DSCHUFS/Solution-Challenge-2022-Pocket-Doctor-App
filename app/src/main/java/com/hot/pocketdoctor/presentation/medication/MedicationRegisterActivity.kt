@@ -6,37 +6,16 @@ import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.text.format.DateFormat.format
-import android.util.Log
-import android.widget.CompoundButton
-import android.widget.TimePicker
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.google.android.material.chip.Chip
-import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.databinding.ActivityMedicationRegisterBinding
-import com.hot.pocketdoctor.presentation.reports.ReportsResponseDTO
 import com.hot.pocketdoctor.presentation.reports.RetrofitClient
-import kotlinx.coroutines.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.http.Field
-import java.lang.Runnable
-import java.lang.String.format
-import java.text.DateFormat
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.util.*
-import kotlin.concurrent.thread
 
 class MedicationRegisterActivity : AppCompatActivity() {
 
@@ -97,7 +76,7 @@ class MedicationRegisterActivity : AppCompatActivity() {
                         }
                     }
                     else{
-                        Log.e("ERROR","RETRO_ERROR")
+                        Toast.makeText(baseContext, "Please try later.", Toast.LENGTH_SHORT).show()
                     }
                 }
                 a.join()
@@ -217,7 +196,6 @@ class MedicationRegisterActivity : AppCompatActivity() {
         for (i in 0..6) {
             if (weekendList[i]) {
                 week.add(i + 1) //선택된 요일
-                Log.d("add", (i + 1).toString())
             }
         }
         if (week.size == 0) {

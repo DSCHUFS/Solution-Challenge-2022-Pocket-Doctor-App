@@ -1,10 +1,12 @@
 package com.hot.pocketdoctor.presentation.treatment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hot.pocketdoctor.PocketDoctorApplication
 import com.hot.pocketdoctor.R
+import com.hot.pocketdoctor.data.preference.PocketDoctorSharedPreference
 import com.hot.pocketdoctor.databinding.FragmentTreatmentListBinding
 import com.hot.pocketdoctor.presentation.base.BaseFragment
 import com.hot.pocketdoctor.presentation.treatment.adapter.DoctorListAdapter
@@ -21,10 +23,13 @@ class TreatmentListFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initTreatmentListAdapter()
-        fetchDoctorInfo()
-        observeDoctorInfoData()
-
+        if (PocketDoctorSharedPreference.getUserToken() !== "") {
+            initTreatmentListAdapter()
+            fetchDoctorInfo()
+            observeDoctorInfoData()
+        } else {
+            Toast.makeText(context, "Please Login First", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initTreatmentListAdapter() {

@@ -3,23 +3,20 @@ package com.hot.pocketdoctor.presentation.reports
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.hot.pocketdoctor.data.preference.PocketDoctorSharedPreference
 import com.hot.pocketdoctor.databinding.FragmentReportsBinding
 import com.hot.pocketdoctor.databinding.ItemReportsRecyclerBinding
 import com.hot.pocketdoctor.presentation.medication.MedicationInfoActivity
-import com.hot.pocketdoctor.presentation.medication.RoomHelper
-import com.hot.pocketdoctor.presentation.medication.RoomMedicine
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.Callback
-import java.lang.Exception
+import retrofit2.Response
 
 class ReportsFragment : Fragment() {
 
@@ -38,7 +35,11 @@ class ReportsFragment : Fragment() {
 
         _binding = FragmentReportsBinding.inflate(inflater, container, false)
 
-        loadReports()
+        if (PocketDoctorSharedPreference.getUserToken() !== "") {
+            loadReports()
+        } else {
+            Toast.makeText(context, "Please Login First", Toast.LENGTH_SHORT).show()
+        }
 
         return binding.root
     }
@@ -97,7 +98,7 @@ class ReportsFragment : Fragment() {
                 }
             }
             override fun onFailure(call: Call<ReportsResponseDTO>, t: Throwable) {
-                Log.e("RETRO_ERR", "ERROR")
+                t.printStackTrace()
             }
         }
         )

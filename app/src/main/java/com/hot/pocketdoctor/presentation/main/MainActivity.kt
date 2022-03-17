@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
     private fun showCallPopUp() {
         AlertDialog.Builder(this)
             .setTitle("Call 1393")
-            .setMessage("ASfdasdfadf")
             .setPositiveButton("Accept") { _, _ ->
                 moveToDial()
             }

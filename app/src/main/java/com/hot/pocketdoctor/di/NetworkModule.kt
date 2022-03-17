@@ -33,7 +33,7 @@ val networkModule = module {
                     GsonBuilder().setLenient().create()
                 )
             )
-            .baseUrl("http://ec2-3-38-63-80.ap-northeast-2.compute.amazonaws.com:3000")  // BaseUrl 확인
+            .baseUrl("http://ec2-3-38-63-80.ap-northeast-2.compute.amazonaws.com:3000")
             .build()
     }
 

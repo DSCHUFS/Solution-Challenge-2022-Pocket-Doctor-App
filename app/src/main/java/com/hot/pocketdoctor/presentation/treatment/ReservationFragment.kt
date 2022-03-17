@@ -3,11 +3,8 @@ package com.hot.pocketdoctor.presentation.treatment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
-import android.widget.RadioButton
 import android.widget.Toast
-import androidx.navigation.fragment.navArgs
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_CLOCK
@@ -96,8 +93,6 @@ class ReservationFragment :
                 addOnPositiveButtonClickListener {
                     val time = " ${this.hour}:${this.minute}:00"
                     calendarDateTime += time
-                    Log.e("AAA", calendarDateTime)
-
                     setDateTimeTextView(calendarDateTime)
                     treatmentViewModel.startTime = calendarDateTime
                 }
@@ -182,6 +177,7 @@ class ReservationFragment :
     private fun setMakeReservationButtonClickListener() {
         binding.btnReservation.setOnClickListener {
             postReservationInfo()
+            Toast.makeText(context, "Reservation Successfully saved", Toast.LENGTH_SHORT).show()
             navigateToMainByStatus()
         }
     }
