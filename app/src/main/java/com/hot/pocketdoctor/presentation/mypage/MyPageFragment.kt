@@ -1,11 +1,13 @@
 package com.hot.pocketdoctor.presentation.mypage
 
+import android.app.FragmentTransaction
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import com.hot.pocketdoctor.R
 import com.hot.pocketdoctor.data.preference.PocketDoctorSharedPreference
 import com.hot.pocketdoctor.databinding.FragmentMyPageBinding
@@ -25,9 +27,14 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_
 
         if (PocketDoctorSharedPreference.getUserToken() !== "") {
             myPageViewModel.getUserInfo()
+            observeUserName()
+            binding.rlLogoutContainer.setOnClickListener {
+                setDialog()
+            }
         }
-        observeUserName()
-        setButtonClickListener()
+        else{
+            setButtonClickListener()
+        }
     }
 
     private fun observeUserName() {
@@ -50,10 +57,6 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_
             rlLoginContainer.setOnClickListener {
                 startActivity(Intent(context, LogInHomeActivity::class.java))
             }
-
-            rlLogoutContainer.setOnClickListener {
-                setDialog()
-            }
         }
     }
 
@@ -70,7 +73,10 @@ class MyPageFragment : BaseFragment<FragmentMyPageBinding>(R.layout.fragment_my_
         dialog.findViewById<TextView>(R.id.btn_dialog_ok)?.setOnClickListener {
             dialog.dismiss()
             PocketDoctorSharedPreference.setUserToken("")
+
             Toast.makeText(context, "Logout Successful", Toast.LENGTH_SHORT).show()
+            observeUserName()
+            setButtonClickListener()
         }
 
         dialog.findViewById<TextView>(R.id.btn_dialog_no)?.setOnClickListener {
