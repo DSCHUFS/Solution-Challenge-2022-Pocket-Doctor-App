@@ -1,9 +1,10 @@
 # Solution-Challenge-2022-Pocket-Doctor-App
 Google Developer Student Clubs 2022 Solution Challenge - Team HOT(HUFS ON TOP)'s Android Application
-- Member: 이재성, 임나경, 정서영
+
+<img src= "https://user-images.githubusercontent.com/51078673/161058837-1e1d6c31-6678-41c5-bc00-a29c3340c91a.png">
 
 ## 💊 Contributor
-### Mobile Frontend - Android
+### Frontend - Android
 <table>
   <tr>
     <td><a href="https://github.com/yejin9858">이재성</a></td>
@@ -16,6 +17,7 @@ Google Developer Student Clubs 2022 Solution Challenge - Team HOT(HUFS ON TOP)'s
 </table>
 
 ### Backend
+
 <table>
   <tr>
     <td><a href="https://github.com/NakyungIm">임나경</a></td>
@@ -29,7 +31,7 @@ Google Developer Student Clubs 2022 Solution Challenge - Team HOT(HUFS ON TOP)'s
 
 
 ## 💊 Libraries
-- #### 안드로이드
+- #### Android
 
 | **Architecture**            | MVVM                                                         |
 | --------------------------- | ------------------------------------------------------------ |
